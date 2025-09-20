@@ -32,7 +32,7 @@ After fixing the **title column issue**, we successfully created the **Connectio
 
 Next, we created a new database called **`YoutubeODS`** with a table named **`Videos`** using a SQL script.  
 
-👉 Check the script here: [![Open Script](https://img.shields.io/badge/SQL-Script-blue?logo=databricks)]("SQL Queries/ODS_Creation.sql")  
+👉 Check the script here: [![Open Script](https://img.shields.io/badge/SQL-Script-blue?logo=databricks)](SQL%20Queries/ODS_Creation.sql)  
 
 After preparing the dataset, the CSV files for **Canada, US, and Brazil** were added into the **Data Flow** in the package called **ODS**. The files were then **unioned** and loaded into the **`YoutubeODS.Videos`** table as the destination.  
 
