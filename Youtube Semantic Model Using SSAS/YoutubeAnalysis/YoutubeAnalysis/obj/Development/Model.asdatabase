@@ -1,0 +1,1042 @@
+{
+  "name": "YoutubeAnalysis",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer DESKTOP-Q498VKD YoutubeDWH",
+        "connectionString": "Provider=SQLNCLI11;Data Source=DESKTOP-Q498VKD;Initial Catalog=YoutubeDWH;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "Category",
+        "columns": [
+          {
+            "name": "CategoryID",
+            "dataType": "int64",
+            "sourceColumn": "CategoryID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Category",
+            "dataType": "string",
+            "sourceColumn": "Category",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Category",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Category].*   FROM [dbo].[Category] ",
+              "dataSource": "SqlServer DESKTOP-Q498VKD YoutubeDWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Category].*   FROM [dbo].[Category] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Category"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Channels",
+        "columns": [
+          {
+            "name": "ChannelID",
+            "dataType": "int64",
+            "sourceColumn": "ChannelID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ChannelTitle",
+            "dataType": "string",
+            "sourceColumn": "ChannelTitle",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Channels",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Channels].*   FROM [dbo].[Channels] ",
+              "dataSource": "SqlServer DESKTOP-Q498VKD YoutubeDWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Channels].*   FROM [dbo].[Channels] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Channels"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Country",
+        "columns": [
+          {
+            "name": "CountryID",
+            "dataType": "int64",
+            "sourceColumn": "CountryID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Country",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Country].*   FROM [dbo].[Country] ",
+              "dataSource": "SqlServer DESKTOP-Q498VKD YoutubeDWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Country].*   FROM [dbo].[Country] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Country"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DateDim",
+        "columns": [
+          {
+            "name": "DateID",
+            "dataType": "int64",
+            "sourceColumn": "DateID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "Day",
+            "dataType": "int64",
+            "sourceColumn": "Day",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Month",
+            "dataType": "int64",
+            "sourceColumn": "Month",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "sourceColumn": "Year",
+            "sourceProviderType": "Integer",
+            "summarizeBy": "none"
+          },
+          {
+            "type": "calculated",
+            "name": "MonthNameTrend",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": [
+              "",
+              "SWITCH (",
+              "    TRUE(),",
+              "    DateDim[Month] = 1,  \"Jan\",",
+              "    DateDim[Month] = 2,  \"Feb\",",
+              "    DateDim[Month] = 3,  \"Mar\",",
+              "    DateDim[Month] = 4,  \"Apr\",",
+              "    DateDim[Month] = 5,  \"May\",",
+              "    DateDim[Month] = 6,  \"Jun\",",
+              "    DateDim[Month] = 7,  \"Jul\",",
+              "    DateDim[Month] = 8,  \"Aug\",",
+              "    DateDim[Month] = 9,  \"Sep\",",
+              "    DateDim[Month] = 10, \"Oct\",",
+              "    DateDim[Month] = 11, \"Nov\",",
+              "    \"Dec\"                        -- month = 12",
+              ")"
+            ],
+            "sortByColumn": "Month"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Date",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Date].*   FROM [dbo].[Date] ",
+              "dataSource": "SqlServer DESKTOP-Q498VKD YoutubeDWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Date].*   FROM [dbo].[Date] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Date"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "VideosFact",
+        "columns": [
+          {
+            "name": "VideoID",
+            "dataType": "int64",
+            "sourceColumn": "VideoID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ViewCounts",
+            "dataType": "int64",
+            "sourceColumn": "ViewCounts",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Likes",
+            "dataType": "int64",
+            "sourceColumn": "Likes",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Dislikes",
+            "dataType": "int64",
+            "sourceColumn": "Dislikes",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CommentsCount",
+            "dataType": "int64",
+            "sourceColumn": "CommentsCount",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CommentsDisabled",
+            "dataType": "int64",
+            "sourceColumn": "CommentsDisabled",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "RatesDisabled",
+            "dataType": "int64",
+            "sourceColumn": "RatesDisabled",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PublishDateID",
+            "dataType": "int64",
+            "sourceColumn": "PublishDateID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TrendDateID",
+            "dataType": "int64",
+            "sourceColumn": "TrendDateID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ChannelID",
+            "dataType": "int64",
+            "sourceColumn": "ChannelID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CountryID",
+            "dataType": "int64",
+            "sourceColumn": "CountryID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CategoryID",
+            "dataType": "int64",
+            "sourceColumn": "CategoryID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "type": "calculated",
+            "name": "TrendDelay",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": [
+              "VAR PublishDate =",
+              "    LOOKUPVALUE (",
+              "        DateDim[Date],       ",
+              "        DateDim[DateID],       ",
+              "        VideosFact[PublishDateID]   ",
+              "    )",
+              "VAR TrendDate =",
+              "    RELATED ( DateDim[Date] )   ",
+              "RETURN",
+              "DATEDIFF ( PublishDate, TrendDate, DAY )"
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "VideosFact",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[VideosFact].*   FROM [dbo].[VideosFact] ",
+              "dataSource": "SqlServer DESKTOP-Q498VKD YoutubeDWH"
+            },
+            "annotations": [
+              {
+                "name": "TableWidgetSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+                  "<TableWidgetGridSerialization xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">",
+                  "  <ColumnSuggestedType />",
+                  "  <ColumnFormat />",
+                  "  <ColumnAccuracy />",
+                  "  <ColumnCurrencySymbol />",
+                  "  <ColumnPositivePattern />",
+                  "  <ColumnNegativePattern />",
+                  "  <ColumnWidths>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>VideoID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>67</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ViewCounts</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>86</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Likes</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>53</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Dislikes</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>64</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CommentsCount</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>109</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CommentsDisabled</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>120</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>RatesDisabled</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>98</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>PublishDateID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>97</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>TrendDateID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>92</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ChannelID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>80</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CountryID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>80</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CategoryID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>86</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnWidths>",
+                  "  <ColumnDisplayIndex>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>VideoID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>0</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ViewCounts</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>1</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Likes</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>2</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Dislikes</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>3</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CommentsCount</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>4</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CommentsDisabled</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>5</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>RatesDisabled</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>6</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>PublishDateID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>7</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>TrendDateID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>8</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ChannelID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>9</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CountryID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>10</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CategoryID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>11</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnDisplayIndex>",
+                  "  <ColumnFrozen />",
+                  "  <ColumnChecked />",
+                  "  <ColumnFilter />",
+                  "  <SelectionFilter />",
+                  "  <FilterParameters />",
+                  "  <IsSortDescending>false</IsSortDescending>",
+                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[VideosFact].*   FROM [dbo].[VideosFact] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "VideosFact"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          },
+          {
+            "name": "TableWidgetSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+              "<TableWidgetGridSerialization xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">",
+              "  <ColumnSuggestedType />",
+              "  <ColumnFormat />",
+              "  <ColumnAccuracy />",
+              "  <ColumnCurrencySymbol />",
+              "  <ColumnPositivePattern />",
+              "  <ColumnNegativePattern />",
+              "  <ColumnWidths>",
+              "    <item>",
+              "      <key>",
+              "        <string>VideoID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>67</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ViewCounts</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>86</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Likes</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>53</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Dislikes</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>64</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CommentsCount</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>109</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CommentsDisabled</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>120</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>RatesDisabled</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>98</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>PublishDateID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>97</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>TrendDateID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>92</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ChannelID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>80</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CountryID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>80</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CategoryID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>86</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnWidths>",
+              "  <ColumnDisplayIndex>",
+              "    <item>",
+              "      <key>",
+              "        <string>VideoID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>0</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ViewCounts</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>1</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Likes</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>2</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Dislikes</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>3</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CommentsCount</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>4</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CommentsDisabled</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>5</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>RatesDisabled</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>6</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>PublishDateID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>7</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>TrendDateID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>8</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ChannelID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>9</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CountryID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>10</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CategoryID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>11</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnDisplayIndex>",
+              "  <ColumnFrozen />",
+              "  <ColumnChecked />",
+              "  <ColumnFilter />",
+              "  <SelectionFilter />",
+              "  <FilterParameters />",
+              "  <IsSortDescending>false</IsSortDescending>",
+              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "DaxMeasures",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Placeholder",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "sourceColumn": "[Placeholder]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": " SELECTCOLUMNS ( { 1 }, \"Placeholder\", 1 )"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "TotalViewCounts",
+            "expression": "SUM(VideosFact[ViewCounts])"
+          },
+          {
+            "name": "ViewCountsBR",
+            "expression": "CALCULATE([TotalViewCounts],Country[Country]=\"Brazil\")"
+          },
+          {
+            "name": "ViewCountsCA",
+            "expression": "CALCULATE([TotalViewCounts],Country[Country]=\"Canada\")"
+          },
+          {
+            "name": "ViewCountsUS",
+            "expression": "CALCULATE([TotalViewCounts],Country[Country]=\"United States of America\")"
+          },
+          {
+            "name": "TotalLikes",
+            "expression": "SUM(VideosFact[Likes])"
+          },
+          {
+            "name": "TotalDislikes",
+            "expression": "SUM(VideosFact[Dislikes])"
+          },
+          {
+            "name": "TotalComments",
+            "expression": "SUM(VideosFact[CommentsCount])"
+          },
+          {
+            "name": "ComIsDisabled",
+            "expression": "Sum(VideosFact[CommentsDisabled])"
+          },
+          {
+            "name": "ComIsNotDisabled",
+            "expression": "COUNT(VideosFact[CommentsDisabled]) - [ComIsDisabled]"
+          },
+          {
+            "name": "RateIsDisabled",
+            "expression": "Sum(VideosFact[RatesDisabled])"
+          },
+          {
+            "name": "RatIsNotDisabled",
+            "expression": "COUNT(VideosFact[RatesDisabled]) - [RateIsDisabled]"
+          },
+          {
+            "name": "AvgTrendDelay",
+            "expression": " INT((AVERAGE(VideosFact[TrendDelay])))"
+          },
+          {
+            "name": "AvgTrendDelayBR",
+            "expression": "CALCULATE([AvgTrendDelay],Country[Country]=\"Brazil\")"
+          },
+          {
+            "name": "AvgTrendDelayCA",
+            "expression": "CALCULATE([AvgTrendDelay],Country[Country]=\"Canada\")"
+          },
+          {
+            "name": "AvgTrendDelayUS",
+            "expression": "CALCULATE([AvgTrendDelay],Country[Country]=\"United States of America\")"
+          },
+          {
+            "name": "TotalVideos#",
+            "expression": " COUNT(VideosFact[CategoryID])"
+          },
+          {
+            "name": "Top Category",
+            "expression": [
+              "",
+              "VAR TopRow =",
+              "    TOPN (",
+              "        1,",
+              "        ADDCOLUMNS (",
+              "            -- group by the Fact table’s CategoryID",
+              "            SUMMARIZE ( VideosFact, VideosFact[CategoryID] ),",
+              "            \"VideoCnt\", [TotalVideos#]      -- your measure that counts videos",
+              "        ),",
+              "        [VideoCnt], DESC,                  -- highest first",
+              "        VideosFact[CategoryID], ASC        -- tie‑breaker",
+              "    )",
+              "VAR TopCategoryID =",
+              "    MAXX ( TopRow, VideosFact[CategoryID] )",
+              "RETURN",
+              "    LOOKUPVALUE (",
+              "        'Category'[Category],          -- column to return",
+              "        'Category'[CategoryID],            -- search column",
+              "        TopCategoryID                      -- search value",
+              "    )"
+            ]
+          },
+          {
+            "name": "MinTrendDelay",
+            "expression": " MIN(VideosFact[TrendDelay])"
+          },
+          {
+            "name": "MaxTrendDelay",
+            "expression": " MAX(VideosFact[TrendDelay])"
+          }
+        ]
+      },
+      {
+        "name": "PublishDateDim",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "DateID",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "DateDim[DateID]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Date",
+            "dataType": "dateTime",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "DateDim[Date]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Day",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "DateDim[Day]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Month",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "DateDim[Month]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Year",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "DateDim[Year]",
+            "summarizeBy": "none"
+          },
+          {
+            "type": "calculated",
+            "name": "MonthName",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": [
+              "SWITCH (",
+              "    TRUE(),",
+              "   PublishDateDim[Month] = 1,  \"Jan\",",
+              "    PublishDateDim[Month] = 2,  \"Feb\",",
+              "    PublishDateDim[Month] = 3,  \"Mar\",",
+              "    PublishDateDim[Month] = 4,  \"Apr\",",
+              "    PublishDateDim[Month] = 5,  \"May\",",
+              "    PublishDateDim[Month] = 6,  \"Jun\",",
+              "    PublishDateDim[Month] = 7,  \"Jul\",",
+              "    PublishDateDim[Month] = 8,  \"Aug\",",
+              "    PublishDateDim[Month] = 9,  \"Sep\",",
+              "    PublishDateDim[Month] = 10, \"Oct\",",
+              "    PublishDateDim[Month] = 11, \"Nov\",",
+              "    \"Dec\"                        -- month = 12",
+              ")"
+            ],
+            "sortByColumn": "Month"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "MonthNameTrend",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "sourceColumn": "DateDim[MonthNameTrend]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": " DateDim"
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "a5dd66d6-09cf-4d05-940f-6ebe6b6dc313",
+        "fromTable": "VideosFact",
+        "fromColumn": "CategoryID",
+        "toTable": "Category",
+        "toColumn": "CategoryID"
+      },
+      {
+        "name": "a4709f10-32cd-4120-b643-4e62fe4be27d",
+        "fromTable": "VideosFact",
+        "fromColumn": "ChannelID",
+        "toTable": "Channels",
+        "toColumn": "ChannelID"
+      },
+      {
+        "name": "db54b836-b4f7-48d1-9ec8-902853daff54",
+        "fromTable": "VideosFact",
+        "fromColumn": "CountryID",
+        "toTable": "Country",
+        "toColumn": "CountryID"
+      },
+      {
+        "name": "eab7729e-748b-440a-9d4a-be872b6729d0",
+        "fromTable": "VideosFact",
+        "fromColumn": "TrendDateID",
+        "toTable": "DateDim",
+        "toColumn": "DateID"
+      },
+      {
+        "name": "493f3b4e-90c1-46ae-b5ea-334d1904a981",
+        "fromTable": "VideosFact",
+        "fromColumn": "PublishDateID",
+        "toTable": "PublishDateDim",
+        "toColumn": "DateID"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  }
+}

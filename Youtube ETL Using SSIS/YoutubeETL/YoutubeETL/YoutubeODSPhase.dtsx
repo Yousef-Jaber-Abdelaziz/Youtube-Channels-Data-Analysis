@@ -1,0 +1,2804 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/6/2025 8:43:54 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-Q498VKD"
+  DTS:CreatorName="DESKTOP-Q498VKD\Yousef Jaber"
+  DTS:DTSID="{CEE295D9-2C06-446B-A83D-3389391A965A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="YoutubeODSPhase"
+  DTS:PackageType="5"
+  DTS:VersionBuild="71"
+  DTS:VersionGUID="{20B9B341-8AE9-4A4F-A45B-ECAFCA166A86}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B269C626-69E1-4D03-A5D5-1C2CF2BC5135}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\BrazilDataSource"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="BrazilDataSource"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\BrazilDataSource.Connections[FlatFileConnection]"
+                  connectionManagerID="{5B132B40-ADF5-4B36-8D44-CD92516F3A91}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[BRData]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[video_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[video_id]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[video_id]"
+                      name="video_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[publishedAt]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[publishedAt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[publishedAt]"
+                      name="publishedAt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[channelId]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[channelId]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[channelId]"
+                      name="channelId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[channelTitle]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[channelTitle]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[channelTitle]"
+                      name="channelTitle"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[categoryId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[categoryId]"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[categoryId]"
+                      name="categoryId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[trending_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[trending_date]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[trending_date]"
+                      name="trending_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[view_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[view_count]"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[view_count]"
+                      name="view_count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[likes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[likes]"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[likes]"
+                      name="likes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[dislikes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[dislikes]"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[dislikes]"
+                      name="dislikes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[comment_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[comment_count]"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[comment_count]"
+                      name="comment_count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[comments_disabled]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[comments_disabled]"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[comments_disabled]"
+                      name="comments_disabled"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[ratings_disabled]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[ratings_disabled]"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[ratings_disabled]"
+                      name="ratings_disabled"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[video_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="video_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[publishedAt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="publishedAt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[channelId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="channelId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[channelTitle]"
+                      dataType="wstr"
+                      length="255"
+                      name="channelTitle" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[categoryId]"
+                      dataType="i4"
+                      name="categoryId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[trending_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="trending_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[tags]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5000"
+                      name="tags" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[view_count]"
+                      dataType="i4"
+                      name="view_count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[likes]"
+                      dataType="i4"
+                      name="likes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[dislikes]"
+                      dataType="i4"
+                      name="dislikes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[comment_count]"
+                      dataType="i4"
+                      name="comment_count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[thumbnail_link]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5000"
+                      name="thumbnail_link" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[comments_disabled]"
+                      dataType="bool"
+                      name="comments_disabled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[ratings_disabled]"
+                      dataType="bool"
+                      name="ratings_disabled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].ExternalColumns[description]"
+                      dataType="wstr"
+                      length="5000"
+                      name="description" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\CanadaDateSource"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="CanadaDateSource"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\CanadaDateSource.Connections[FlatFileConnection]"
+                  connectionManagerID="{7418EA1C-65A8-4C80-AF3F-69478097928D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CAData]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[video_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[video_id]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[video_id]"
+                      name="video_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[publishedAt]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[publishedAt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[publishedAt]"
+                      name="publishedAt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[channelId]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[channelId]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[channelId]"
+                      name="channelId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[channelTitle]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[channelTitle]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[channelTitle]"
+                      name="channelTitle"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[categoryId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[categoryId]"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[categoryId]"
+                      name="categoryId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[trending_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[trending_date]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[trending_date]"
+                      name="trending_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[view_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[view_count]"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[view_count]"
+                      name="view_count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[likes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[likes]"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[likes]"
+                      name="likes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[dislikes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[dislikes]"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[dislikes]"
+                      name="dislikes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[comment_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[comment_count]"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[comment_count]"
+                      name="comment_count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[comments_disabled]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[comments_disabled]"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[comments_disabled]"
+                      name="comments_disabled"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[ratings_disabled]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[ratings_disabled]"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[ratings_disabled]"
+                      name="ratings_disabled"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[video_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="video_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[publishedAt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="publishedAt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[channelId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="channelId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[channelTitle]"
+                      dataType="wstr"
+                      length="255"
+                      name="channelTitle" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[categoryId]"
+                      dataType="i4"
+                      name="categoryId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[trending_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="trending_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[tags]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5000"
+                      name="tags" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[view_count]"
+                      dataType="i4"
+                      name="view_count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[likes]"
+                      dataType="i4"
+                      name="likes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[dislikes]"
+                      dataType="i4"
+                      name="dislikes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[comment_count]"
+                      dataType="i4"
+                      name="comment_count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[thumbnail_link]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5000"
+                      name="thumbnail_link" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[comments_disabled]"
+                      dataType="bool"
+                      name="comments_disabled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[ratings_disabled]"
+                      dataType="bool"
+                      name="ratings_disabled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].ExternalColumns[description]"
+                      dataType="wstr"
+                      length="5000"
+                      name="description" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\CountryBrazil"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="CountryBrazil"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\CountryBrazil.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\CountryBrazil.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\CountryBrazil.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CountryBrazil.Outputs[Derived Column Output].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\Data Flow Task\CountryBrazil.Outputs[Derived Column Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Brazil"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Brazil"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\CountryBrazil.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\CountryBrazil.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CountryBrazil.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CountryBrazil.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CountryBrazil.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CountryBrazil.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\CountryCanada"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="CountryCanada"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\CountryCanada.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\CountryCanada.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\CountryCanada.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CountryCanada.Outputs[Derived Column Output].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\Data Flow Task\CountryCanada.Outputs[Derived Column Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Canada"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Canada"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\CountryCanada.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\CountryCanada.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CountryCanada.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CountryCanada.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CountryCanada.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CountryCanada.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\CountryUnitedStates"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="CountryUnitedStates"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\CountryUnitedStates.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\CountryUnitedStates.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\CountryUnitedStates.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CountryUnitedStates.Outputs[Derived Column Output].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="24"
+                      lineageId="Package\Data Flow Task\CountryUnitedStates.Outputs[Derived Column Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"United States of America"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"United States of America"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\CountryUnitedStates.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\CountryUnitedStates.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CountryUnitedStates.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CountryUnitedStates.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CountryUnitedStates.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CountryUnitedStates.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\TRIMLower ChannelTitle"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="TRIMLower ChannelTitle"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\TRIMLower ChannelTitle.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\TRIMLower ChannelTitle.Inputs[Derived Column Input].Columns[channelTitle]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="channelTitle"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[channelTitle]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LOWER]([TRIM](#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[channelTitle]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LOWER(TRIM(channelTitle))</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\TRIMLower ChannelTitle.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\TRIMLower ChannelTitle.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\TRIMLower ChannelTitle.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\TRIMLower ChannelTitle.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\TRIMLower ChannelTitle.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\TRIMLower ChannelTitle.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\TRIMLower ChannelTitle.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\TRIMLower ChannelTitle.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[video_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="video_id"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[video_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[video_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[publishedAt]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="publishedAt"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[publishedAt]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[publishedAt]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[channelId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="channelId"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[channelId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[channelId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[channelTitle]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="channelTitle"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[channelTitle]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[channelTitle]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[categoryId]"
+                      cachedDataType="i4"
+                      cachedName="categoryId"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[categoryId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[categoryId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[trending_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="trending_date"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[trending_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[trending_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[view_count]"
+                      cachedDataType="i4"
+                      cachedName="view_count"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[view_count]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[view_count]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[likes]"
+                      cachedDataType="i4"
+                      cachedName="likes"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[likes]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[likes]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[dislikes]"
+                      cachedDataType="i4"
+                      cachedName="dislikes"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[dislikes]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[dislikes]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[comment_count]"
+                      cachedDataType="i4"
+                      cachedName="comment_count"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[comment_count]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[comment_count]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[comments_disabled]"
+                      cachedDataType="bool"
+                      cachedName="comments_disabled"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[comments_disabled]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[comments_disabled]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[ratings_disabled]"
+                      cachedDataType="bool"
+                      cachedName="ratings_disabled"
+                      lineageId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output].Columns[ratings_disabled]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ratings_disabled]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Country"
+                      lineageId="Package\Data Flow Task\CountryBrazil.Outputs[Derived Column Output].Columns[Country]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Country]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[video_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="video_id"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[video_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[video_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[publishedAt]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="publishedAt"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[publishedAt]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[publishedAt]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[channelId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="channelId"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[channelId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[channelId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[channelTitle]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="channelTitle"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[channelTitle]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[channelTitle]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[categoryId]"
+                      cachedDataType="i4"
+                      cachedName="categoryId"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[categoryId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[categoryId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[trending_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="trending_date"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[trending_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[trending_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[view_count]"
+                      cachedDataType="i4"
+                      cachedName="view_count"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[view_count]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[view_count]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[likes]"
+                      cachedDataType="i4"
+                      cachedName="likes"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[likes]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[likes]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[dislikes]"
+                      cachedDataType="i4"
+                      cachedName="dislikes"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[dislikes]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[dislikes]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[comment_count]"
+                      cachedDataType="i4"
+                      cachedName="comment_count"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[comment_count]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[comment_count]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[comments_disabled]"
+                      cachedDataType="bool"
+                      cachedName="comments_disabled"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[comments_disabled]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[comments_disabled]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[ratings_disabled]"
+                      cachedDataType="bool"
+                      cachedName="ratings_disabled"
+                      lineageId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output].Columns[ratings_disabled]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ratings_disabled]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Country"
+                      lineageId="Package\Data Flow Task\CountryCanada.Outputs[Derived Column Output].Columns[Country]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Country]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[video_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="video_id"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[video_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[video_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[publishedAt]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="publishedAt"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[publishedAt]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[publishedAt]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[channelId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="channelId"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[channelId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[channelId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[channelTitle]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="channelTitle"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[channelTitle]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[channelTitle]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[categoryId]"
+                      cachedDataType="i4"
+                      cachedName="categoryId"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[categoryId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[categoryId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[trending_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="trending_date"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[trending_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[trending_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[view_count]"
+                      cachedDataType="i4"
+                      cachedName="view_count"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[view_count]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[view_count]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[likes]"
+                      cachedDataType="i4"
+                      cachedName="likes"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[likes]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[likes]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[dislikes]"
+                      cachedDataType="i4"
+                      cachedName="dislikes"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[dislikes]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[dislikes]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[comment_count]"
+                      cachedDataType="i4"
+                      cachedName="comment_count"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[comment_count]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[comment_count]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[comments_disabled]"
+                      cachedDataType="bool"
+                      cachedName="comments_disabled"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[comments_disabled]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[comments_disabled]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[ratings_disabled]"
+                      cachedDataType="bool"
+                      cachedName="ratings_disabled"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[ratings_disabled]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ratings_disabled]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="24"
+                      cachedName="Country"
+                      lineageId="Package\Data Flow Task\CountryUnitedStates.Outputs[Derived Column Output].Columns[Country]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Country]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 4]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 4">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[video_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[video_id]"
+                      name="video_id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[publishedAt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[publishedAt]"
+                      name="publishedAt" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[channelId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[channelId]"
+                      name="channelId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[channelTitle]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[channelTitle]"
+                      name="channelTitle" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[categoryId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[categoryId]"
+                      name="categoryId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[trending_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[trending_date]"
+                      name="trending_date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[view_count]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[view_count]"
+                      name="view_count" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[likes]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[likes]"
+                      name="likes" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[dislikes]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[dislikes]"
+                      name="dislikes" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[comment_count]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[comment_count]"
+                      name="comment_count" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[comments_disabled]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[comments_disabled]"
+                      name="comments_disabled" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ratings_disabled]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ratings_disabled]"
+                      name="ratings_disabled" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Country]"
+                      dataType="wstr"
+                      length="24"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Country]"
+                      name="Country" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\UnitedStatesDataSource"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="UnitedStatesDataSource"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\UnitedStatesDataSource.Connections[FlatFileConnection]"
+                  connectionManagerID="{EBE98770-4523-4FB0-AE25-8436B61B82F9}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[USData]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[video_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[video_id]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[video_id]"
+                      name="video_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[publishedAt]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[publishedAt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[publishedAt]"
+                      name="publishedAt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[channelId]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[channelId]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[channelId]"
+                      name="channelId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[channelTitle]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[channelTitle]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[channelTitle]"
+                      name="channelTitle"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[categoryId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[categoryId]"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[categoryId]"
+                      name="categoryId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[trending_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[trending_date]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[trending_date]"
+                      name="trending_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[view_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[view_count]"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[view_count]"
+                      name="view_count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[likes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[likes]"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[likes]"
+                      name="likes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[dislikes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[dislikes]"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[dislikes]"
+                      name="dislikes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[comment_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[comment_count]"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[comment_count]"
+                      name="comment_count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[comments_disabled]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[comments_disabled]"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[comments_disabled]"
+                      name="comments_disabled"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[ratings_disabled]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[ratings_disabled]"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].Columns[ratings_disabled]"
+                      name="ratings_disabled"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[video_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="video_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[publishedAt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="publishedAt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[channelId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="channelId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[channelTitle]"
+                      dataType="wstr"
+                      length="255"
+                      name="channelTitle" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[categoryId]"
+                      dataType="i4"
+                      name="categoryId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[trending_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="trending_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[tags]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5000"
+                      name="tags" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[view_count]"
+                      dataType="i4"
+                      name="view_count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[likes]"
+                      dataType="i4"
+                      name="likes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[dislikes]"
+                      dataType="i4"
+                      name="dislikes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[comment_count]"
+                      dataType="i4"
+                      name="comment_count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[thumbnail_link]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5000"
+                      name="thumbnail_link" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[comments_disabled]"
+                      dataType="bool"
+                      name="comments_disabled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[ratings_disabled]"
+                      dataType="bool"
+                      name="ratings_disabled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output].ExternalColumns[description]"
+                      dataType="wstr"
+                      length="5000"
+                      name="description" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\YoutubeODSDestination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="YoutubeODSDestination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[videos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\YoutubeODSDestination.Connections[OleDbConnection]"
+                  connectionManagerID="{69E33F96-6074-4F5F-B317-1CDD463573ED}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-Q498VKD.YoutubeODS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].Columns[channelId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="channelId"
+                      externalMetadataColumnId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[ChannelID]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[channelId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].Columns[channelTitle]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="channelTitle"
+                      externalMetadataColumnId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[ChannelTitle]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[channelTitle]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].Columns[categoryId]"
+                      cachedDataType="i4"
+                      cachedName="categoryId"
+                      externalMetadataColumnId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[CategoryID]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[categoryId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].Columns[likes]"
+                      cachedDataType="i4"
+                      cachedName="likes"
+                      externalMetadataColumnId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[Likes]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[likes]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].Columns[dislikes]"
+                      cachedDataType="i4"
+                      cachedName="dislikes"
+                      externalMetadataColumnId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[Dislikes]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[dislikes]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="24"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].Columns[video_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="video_id"
+                      externalMetadataColumnId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[VideoID]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[video_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].Columns[publishedAt]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="publishedAt"
+                      externalMetadataColumnId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[PublisheDate]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[publishedAt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].Columns[trending_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="trending_date"
+                      externalMetadataColumnId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[TrendingDate]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[trending_date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].Columns[view_count]"
+                      cachedDataType="i4"
+                      cachedName="view_count"
+                      externalMetadataColumnId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[ViewCount]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[view_count]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].Columns[comment_count]"
+                      cachedDataType="i4"
+                      cachedName="comment_count"
+                      externalMetadataColumnId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[CommentCount]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[comment_count]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].Columns[comments_disabled]"
+                      cachedDataType="bool"
+                      cachedName="comments_disabled"
+                      externalMetadataColumnId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[CommentsDisabled]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[comments_disabled]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].Columns[ratings_disabled]"
+                      cachedDataType="bool"
+                      cachedName="ratings_disabled"
+                      externalMetadataColumnId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[RatingsDisabled]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ratings_disabled]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[VideoID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VideoID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[PublisheDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PublisheDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[ChannelID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ChannelID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[ChannelTitle]"
+                      dataType="wstr"
+                      length="255"
+                      name="ChannelTitle" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[CategoryID]"
+                      dataType="i4"
+                      name="CategoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[TrendingDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TrendingDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[ViewCount]"
+                      dataType="i4"
+                      name="ViewCount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[Likes]"
+                      dataType="i4"
+                      name="Likes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[Dislikes]"
+                      dataType="i4"
+                      name="Dislikes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[CommentCount]"
+                      dataType="i4"
+                      name="CommentCount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[CommentsDisabled]"
+                      dataType="bool"
+                      name="CommentsDisabled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[RatingsDisabled]"
+                      dataType="bool"
+                      name="RatingsDisabled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="24"
+                      name="Country" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\YoutubeODSDestination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\YoutubeODSDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\YoutubeODSDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\YoutubeODSDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\CountryBrazil.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\CountryCanada.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output2]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 3]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\CountryUnitedStates.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output3]"
+              endId="Package\Data Flow Task\YoutubeODSDestination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\TRIMLower ChannelTitle.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task\CountryBrazil.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task\BrazilDataSource.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Flat File Source Output1]"
+              endId="Package\Data Flow Task\CountryCanada.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task\CanadaDateSource.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Flat File Source Output2]"
+              endId="Package\Data Flow Task\CountryUnitedStates.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task\UnitedStatesDataSource.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Union All Output 1]"
+              endId="Package\Data Flow Task\TRIMLower ChannelTitle.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TruncateVideosTable"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BEFD7855-BD9C-4276-91CD-90AB811793B5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TruncateVideosTable"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{69E33F96-6074-4F5F-B317-1CDD463573ED}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE videos" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{23234F88-5E04-426F-A077-BA01E8973B6B}"
+      DTS:From="Package\TruncateVideosTable"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task"
+          TopLeft="174,88" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\TruncateVideosTable"
+          TopLeft="157,13" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="250.25,55">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Data Flow Task\TRIMLower ChannelTitle"
+          TopLeft="220,261" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task\CountryCanada"
+          TopLeft="237,101" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Data Flow Task\CanadaDateSource"
+          TopLeft="223,23" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Data Flow Task\YoutubeODSDestination"
+          TopLeft="218,330" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Data Flow Task\UnitedStatesDataSource"
+          TopLeft="424,23" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Data Flow Task\Union All"
+          TopLeft="253,187" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Data Flow Task\CountryUnitedStates"
+          TopLeft="435,101" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Data Flow Task\CountryBrazil"
+          TopLeft="40,105" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Data Flow Task\BrazilDataSource"
+          TopLeft="34.5,21.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="317.5,229">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output2]"
+          TopLeft="524.75,65">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output1]"
+          TopLeft="313,65">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="114.75,63.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.5"
+              Start="0,0"
+              End="0,34">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output3]"
+          TopLeft="319,303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output2]"
+          TopLeft="525.5,143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-182.25,44"
+              Start="0,0"
+              End="-182.25,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.710875331565" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.710875331565"
+                    Point2="0,28.710875331565"
+                    Point3="-4,28.710875331565" />
+                  <mssgle:LineSegment
+                    End="-178.25,28.710875331565" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-178.25,28.710875331565"
+                    Point2="-182.25,28.710875331565"
+                    Point3="-182.25,32.710875331565" />
+                  <mssgle:LineSegment
+                    End="-182.25,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="314.75,143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="112.5,147">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="173.25,40"
+              Start="0,0"
+              End="173.25,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1007957559682" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.1007957559682"
+                    Point2="0,26.1007957559682"
+                    Point3="4,26.1007957559682" />
+                  <mssgle:LineSegment
+                    End="169.25,26.1007957559682" />
+                  <mssgle:CubicBezierSegment
+                    Point1="169.25,26.1007957559682"
+                    Point2="173.25,26.1007957559682"
+                    Point3="173.25,30.1007957559682" />
+                  <mssgle:LineSegment
+                    End="173.25,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\YoutubeODSDestination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

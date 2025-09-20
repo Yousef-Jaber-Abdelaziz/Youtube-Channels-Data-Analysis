@@ -1,0 +1,1919 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Flat File Connection Manager 1"
+  DTS:DTSID="{6ECEA607-B2A3-4013-B0C1-D7E6827C5BFB}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1033"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:ColumnNamesInFirstDataRow="True"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x003C_none_x003E_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="D:\GBG_Academy sessions\Online Sessions\Tasks\Task2_Youtube_Data\BR_Fixed.csv">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="video_id"
+          DTS:DTSID="{AC3F3C0A-D27B-4EA5-AE8E-817C78567481}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="title"
+          DTS:DTSID="{D56875A6-B36D-429B-AA15-37E680DE1872}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="publishedAt"
+          DTS:DTSID="{DB730E4D-1E9D-45BD-8BA0-2F8D772D2660}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="channelId"
+          DTS:DTSID="{47CE3C39-172C-490C-B867-8C6EBE0B6F53}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="channelTitle"
+          DTS:DTSID="{834AB521-EB18-4A5A-B84E-214F3F750769}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="categoryId"
+          DTS:DTSID="{13E35E56-B599-49EB-8231-91DFB4098926}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="trending_date"
+          DTS:DTSID="{EC062CD8-C395-4080-9956-1A079B5AE70B}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="tags"
+          DTS:DTSID="{6F85A043-E268-4496-B39D-881AE9E900B6}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="view_count"
+          DTS:DTSID="{95100099-D28F-4B5C-886D-51F2403BE38E}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="likes"
+          DTS:DTSID="{CB83ACFD-0E4F-45B0-BC89-1DE3738E5375}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="dislikes"
+          DTS:DTSID="{A9DA0993-4F20-48A4-B45E-1153A566E152}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="comment_count"
+          DTS:DTSID="{E9C3F390-B3C1-400E-A2DA-7E63F6E370E6}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="thumbnail_link"
+          DTS:DTSID="{3EA622A3-08A4-458F-8370-B096D0093C53}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="comments_disabled"
+          DTS:DTSID="{BA13D829-7C1B-4671-9FC7-BA55FD4D1364}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="ratings_disabled"
+          DTS:DTSID="{62E0DC62-09FA-4E40-9B3D-59BADF969F75}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="description s9FH4rDMvds"
+          DTS:DTSID="{98B79E6A-991D-4E0C-A5E6-3117329205F6}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="LEVEI UM FORA? FINGI ESTAR APAIXONADO POR ELA!"
+          DTS:DTSID="{FC322200-8F55-4DE4-9C2B-7CB40F9E94F3}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-11T22 21 49Z"
+          DTS:DTSID="{FAEAF0F4-6C6E-4C25-839A-D9B19E58A341}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="UCGfBwrCoi9ZJjKiUK8MmJNw"
+          DTS:DTSID="{D465E74E-CFB0-41E3-BF49-DAF7A0350DC0}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Pietro Guedes"
+          DTS:DTSID="{F27DDAFE-0859-4E4E-81F1-911DBAF4436E}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="22"
+          DTS:DTSID="{649F8721-F3A7-43E1-853E-CF747EB8E0D0}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-12T00 00 00Z"
+          DTS:DTSID="{9DDD16CE-EFFB-4C92-9899-0195D23A23AF}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="pietro|guedes|ingrid|ohara|pingrid|vlog|amigos|jully|molina|mansÃ£o|mansao|dos|youtubers|gkhouse"
+          DTS:DTSID="{E5353048-E85D-4752-BEAD-264C11921141}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="263835"
+          DTS:DTSID="{C7A98BEB-3361-4C9A-9AC5-D886F6A0EB77}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="85095"
+          DTS:DTSID="{5F93FAF8-B048-496A-8EB8-91DEE43A19DB}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="487"
+          DTS:DTSID="{A7515F20-A409-44F7-BF87-883D64EDE499}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="4500"
+          DTS:DTSID="{FB316E7C-EE52-4D20-8921-F9D665860702}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="https   i ytimg com vi s9FH4rDMvds default jpg"
+          DTS:DTSID="{AC3B4931-20D6-4F15-8AFA-43F868ECCFAD}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{CFFFF4F1-E90A-4BC0-B2B0-D92376668864}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{0A3CEFBD-5BE3-4AFF-AE87-68B44E7E5C45}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;&quot;&quot;Salve rapaziada"
+          DTS:DTSID="{D4CB28B1-AD01-4AFF-AF32-4CE5A858721E}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" neste vÃ­deo me declarei pra ela e me surpreendi com a resposta! Espero que gostem!  )MINHAS REDES- Instagram  https   www instagram com 190pietro ?hl pt-br- TikTok  https   www tiktok com @190pietro?lang pt_BR - Twitter  https   mobile twitter com ttdo190â–ºCANAIS DOS PARTICIPANTES E PLAYLIST TODOS VÃDEOS DA CASA Playlist âžœ https   www youtube com playlist?list PLrT75fWIkg088N2Q_h1Hw5Lq-j9YWxAOCCanais  âžœ Gregory Kessey  https   www youtube com GregoryKesseyâžœPeixinho  https   www youtube com PeixeâžœIngrid ohara  https   www youtube com IngridOharaTV âžœVivi Wanderley  https   www youtube com ViviWanderleyâžœLuiza Parente  https   www youtube com channel UCRKMoImiahCNu833HVQVhBAâžœ190 Pietro  https   www youtube com channel UCGfBwrCoi9ZJjKiUK8MmJNwâžœJoÃ£o Caetano  https   www youtube com JoÃ£oCaetanoyoutuberâžœJully Molinna  https   www youtube com jullymolinnablogâžœBya Kessey  https   www instagram com ByaKessey&quot;&quot;&quot; jbGRowa5tIk"
+          DTS:DTSID="{3ADA1B6A-D0F4-48B7-A88A-1653E739D47D}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="ITZY â€œNot Shyâ€ M V TEASER"
+          DTS:DTSID="{D82FBB99-5BB7-4A9E-9D6C-6065BF83405E}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-11T15 00 13Z"
+          DTS:DTSID="{E5621234-A70D-46A5-B19B-E66CE20304BD}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="UCaO6TYtlC8U5ttz62hTrZgg"
+          DTS:DTSID="{6A026220-3B14-4ED8-AF41-A2EC8FE61365}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="JYP Entertainment"
+          DTS:DTSID="{17021E3B-F806-4B04-B0FA-B70BDC046BDB}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="10"
+          DTS:DTSID="{04E0DD7E-5D2D-4605-8532-5B5DAD2F5DBD}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-12T00 00 00Z"
+          DTS:DTSID="{F4979D86-62AF-439F-808E-BBC1BAC0868A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="JYP Entertainment|JYP|ITZY|ìžˆì§€|ITZY Video|ITZY Yeji|ITZY Lia|ITZY Ryujin|ITZY Chaeryeong|ITZY Yuna|ìžˆì§€ ì˜ˆì§€|ìžˆì§€ ë¦¬ì•„|ìžˆì§€ ë¥˜ì§„|ìžˆì§€ ì±„ë ¹|ìžˆì§€ ìœ ë‚˜|ì˜ˆì§€|ë¦¬ì•„|ë¥˜ì§„|ì±„ë ¹|ìœ ë‚˜|Yeji|Lia|Ryujin|Chaeryeong|Yuna|ITZY BEHIND|ITZY VIDEOS|ITZY DEBUT|ìžˆì§€ ë°ë·”|not shy|ITZY not shy|ITZY TEASER|ìžˆì§€ í‹°ì €|not shy í‹°ì €|ìžˆì§€ ë®¤ë¹„ í‹°ì €|not shy ë®¤ë¹„ í‹°ì €|ITZY MV TEASER|ITZY MV|M V|TEASER|ìžˆì§€ ì»´ë°±|ITZY COMEBACK|not shy MV|ë‚«ìƒ¤ì´ ë®¤ë¹„|ë‚«ìƒ¤ì´|not shy opening trailer|opening trailer"
+          DTS:DTSID="{E9E3363F-F99F-439B-8272-D8C19596F684}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="6000070"
+          DTS:DTSID="{FC0B4105-F5EA-44A2-9A3A-79B9E76E3D39}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="714310"
+          DTS:DTSID="{5CF67243-B699-42D8-AA03-C5660F861012}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="15176"
+          DTS:DTSID="{735B3078-A4D2-494C-AE85-DE1E759CC7DB}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="31040"
+          DTS:DTSID="{5245067C-03D7-4B4A-8612-7AD393EB6197}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="https   i ytimg com vi jbGRowa5tIk default jpg"
+          DTS:DTSID="{C179456A-7847-4BEF-93B6-F789D4851B21}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{AB04C6E6-7A9B-43A7-A726-CBC08C3655E4}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{F879755A-7F37-4C9F-B647-32EF8DD25ED1}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="ITZY Not Shy M V ITZY Official  https   www youtube com c ITZYhttps   www instagram com itzy all in us http   www twitter com ITZYOfficialhttp   www facebook com OfficialITZYhttp   ITZY jype comhttp   fans jype com ITZY#ITZY #NotShy #ITZY_NotShyCopyrights 2020 â“’ JYP Entertainment  All Rights Reserved 3EfkCrXKZNs"
+          DTS:DTSID="{7D1935FD-CEEF-4A02-A6BB-50A881CDEBEA}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Oh Juliana PARÃ“DIA - MC Niack"
+          DTS:DTSID="{61354CBD-C727-45AE-936A-A961DC9F00CE}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-10T14 59 00Z"
+          DTS:DTSID="{3820B61A-9675-49F0-92AB-341B29109807}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="UCoXZmVma073v5G1cW82UKkA"
+          DTS:DTSID="{8B3E1CF7-A330-413E-A246-31FF310B58CC}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="As IrmÃ£s Mota"
+          DTS:DTSID="{149A052A-005E-43B3-BFA8-94A5173042B1}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="22"
+          DTS:DTSID="{B43A6079-2C6B-46C2-95FB-C847953D5FC9}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-12T00 00 00Z"
+          DTS:DTSID="{E35878FD-237E-4BF1-98A9-1BFE4B432277}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="OH JULIANA PARÃ“DIA|MC Niack PARÃ“DIA|PARÃ“DIAS|AS IRMÃƒS MOTA|IRMÃƒS MOTA PARÃ“DIAS|PARÃ“DIA OH JULIANA|PARÃ“DIA JULIANA"
+          DTS:DTSID="{7929236A-15A9-4289-9A5D-B4910E591CDA}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2296748"
+          DTS:DTSID="{7CD87468-BF50-49B9-9EE0-C3F21A335D99}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="39761"
+          DTS:DTSID="{83E7DEAA-7F38-47CF-961F-6DE0A8DDF49F}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="5484"
+          DTS:DTSID="{FF4E503B-04C0-4412-B0B8-9ED6AAD1C11E}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="0"
+          DTS:DTSID="{D9EB89F7-C01D-4665-A08D-28C50A06A2ED}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="https   i ytimg com vi 3EfkCrXKZNs default jpg"
+          DTS:DTSID="{9A9EB89B-CD16-4FE6-B0BD-39DCE85AFB3D}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="True"
+          DTS:DTSID="{B4C1172F-9BB0-4FB6-B0E9-292C6E4F4CDB}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{63C6622D-425F-41D6-9B62-1D1553B98CD9}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;&quot;&quot;Se inscrevam meus amores! ðŸ“¬ Quer nos mandar algo? ðŸ“¨ðŸ“¦ðŸ›ðŸ“¬Essa Ã© nossa caixa postal CAIXA POSTAL  07CEP  39 400 970MONTES CLAROS MGAG  Central dos Correios de Montes Claros MG * coloque o nome pra quem deseja mandar   NÃºbia"
+          DTS:DTSID="{33D9C831-9A28-4713-8314-9CFD8A15D7DB}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" Camily ou Rodrigo MotaINSTAGRAM   @nubiabinhaa e @camilymottaa EMAIL COMERCIAL  nubiamota@yahoo com brBjinhos  ðŸ˜šâ¤&quot;&quot;&quot; gBjox7vn3-g"
+          DTS:DTSID="{78D91A08-5555-480F-9B73-4C278BFCEFFE}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Contos de Runeterra  Targon | A Estrada Tortuosa"
+          DTS:DTSID="{E0FE3406-00FB-4DF8-ADC1-5CCB3B09D9D2}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-11T15 00 09Z"
+          DTS:DTSID="{0E1DF397-95BB-4C25-A1D4-BE949916AF7E}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="UC6Xqz2pm50gDCORYztqhDpg"
+          DTS:DTSID="{25931999-A93D-4C5A-B549-F639B325B7FA}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="League of Legends BR"
+          DTS:DTSID="{467EEA55-0CA6-484B-B769-E1B4DC12AAAC}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="20"
+          DTS:DTSID="{0CA1B0A1-2040-4E32-9AF1-515A6D1655B0}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-12T00 00 00Z"
+          DTS:DTSID="{22267B1F-A30C-47B0-8064-04D3524B2DBD}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Riot|Riot Games|League of Legends|lol|trailer|cinematic|animaÃ§Ã£o|cg|short|curta|animation|animated|movie|vÃ­deo|riot|riot games|champions|campeÃµes|card game|jogo de cartas|moba|legends of runeterra|legends runeterra|legends|runeterra|runterra|LoR|league of legends|league|LoL|diana|leona|targon|Ã¡guas de sentina|noxus|ionia|shadow isles|ilhas das sombras|demacia|piltover|zaun|freljord"
+          DTS:DTSID="{D2357E3E-012B-43B7-A13E-A6F2A648B1E3}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="300510"
+          DTS:DTSID="{D72A076B-FC41-4854-BE52-A91903E0689C}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="46222"
+          DTS:DTSID="{DF661F5F-777B-4286-9C0D-ADC8443A3E42}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="242"
+          DTS:DTSID="{CEF18445-EE8E-47AF-93C6-4316E719FB3A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2748"
+          DTS:DTSID="{C51C9A51-C05F-483B-88E2-A5C00E57EEED}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="https   i ytimg com vi gBjox7vn3-g default jpg"
+          DTS:DTSID="{B8A9A288-F4E1-4E83-94EF-74BD5055A388}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{47F5A508-DF5A-44DD-BCF6-233FD11DA989}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{A0AA65E6-7E25-4392-8ED9-BE7E82C836AA}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;&quot;&quot;VocÃª se unirÃ¡ aos Lunari e aos Solari em Targon? Jogue agora em https   playruneterra com pt-brSob a sombra de um eclipse iminente"
+          DTS:DTSID="{C89ECC8E-F85F-43ED-856A-BD8A54593789}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" uma jovem batedora Lunari escapa da prisÃ£o com seu namorado Solari"
+          DTS:DTSID="{5D837313-3F37-4B7B-85AF-9CAEFAA0E8AB}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" e o casal decide dar as costas a Targon para sempre Apresentando Diana"
+          DTS:DTSID="{9F5E0F7E-99CE-43F6-B28E-EE3CF21BE563}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" o EscÃ¡rnio da LuaLeona"
+          DTS:DTSID="{90A3673D-B277-4E5A-8833-1FA5570A521B}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" a Alvorada RadianteExplore Targon Jogue com Targon em Legends of Runeterra  https   playruneterra com pt-brMais detalhes sobre Targon  https   universe leagueoflegends com pt_BR region mount-targon ConheÃ§a Runeterra  https   map leagueoflegends com pt_BR&quot;&quot;&quot; npoUGx7UW7o"
+          DTS:DTSID="{245C32A7-576E-480D-BC93-54FF35A6C081}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Entrevista com Thammy Miranda | The Noite (10 08 20)"
+          DTS:DTSID="{5CECBC8C-0AB8-4477-A0AA-48F811A62BC4}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-11T20 04 02Z"
+          DTS:DTSID="{1FE793C1-4352-48E1-AEDE-9E0B91C75D12}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="UCEWOoncsrmirqnFqxer9lmA"
+          DTS:DTSID="{969B1FE8-F83B-43EF-AC8E-719EC2973616}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="The Noite com Danilo Gentili"
+          DTS:DTSID="{A095DD79-29D2-46FD-BD59-C71DBF29C618}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="23"
+          DTS:DTSID="{C0380294-0C4B-4520-8B71-5DF184CD3E45}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-12T00 00 00Z"
+          DTS:DTSID="{B03D4B3E-E767-495C-AC7C-7D6ACF26F3E0}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="The Noite|The Noite com Danilo Gentili|Danilo Gentili|Murilo Couto|LÃ©o Lins|Juliana|Diguinho|Diguinho Coruja|Ultraje a Rigor|Roger|Marcos Kleine|Bacalhau|Mingau|talk show|late night|talk show night|danilo talk show|danilo late night|The Noite 10 de Agosto|The Noite 10 08|Entrevista|Thammy Miranda"
+          DTS:DTSID="{FBAE3B0F-E8DE-4020-9CCA-FAEDF64EC53B}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="327235"
+          DTS:DTSID="{B15FDD09-8ABF-45EF-A3BF-D3D42A1336D5}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="22059"
+          DTS:DTSID="{F1D9549F-C7C7-4AD3-A0F2-3C7C5DA58FED}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="3972"
+          DTS:DTSID="{592F24C5-5DAB-4B09-BA26-FE03CFFF2B1A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2751"
+          DTS:DTSID="{238EADF0-B384-46ED-A7A7-BB232CF9CA2C}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="https   i ytimg com vi npoUGx7UW7o default jpg"
+          DTS:DTSID="{3609C41F-4708-4E11-8B0B-0AA66A4FEF2D}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{A8B496F1-10D1-49DA-92A4-E82F31F5280B}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{9189FE1D-7355-431B-BBC7-7ED375C33595}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;&quot;&quot;Danilo Gentili recebe Thammy Miranda  ApÃ³s passar o primeiro dia dos pais com seu filho Bento fora da barriga da esposa"
+          DTS:DTSID="{55267F62-1A81-4AEF-BECE-28CD235E79C9}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" Andressa"
+          DTS:DTSID="{CC12CA63-55F5-4D1C-ACEA-9D120B66F08A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" ele comenta como foi seu domingo e tambÃ©m conversa sobre os novos desafios que vieram com a paternidade  Confira!__________________________________________________________________*Trechos removidos de acordo com as polÃ­ticas do youtube*O The Noite Ã© um talk show apresentado por Danilo Gentili e vai ao ar de segunda a sexta nas madrugadas do SBT  Personalidades de todas as Ã¡reas sÃ£o entrevistadas no programa"
+          DTS:DTSID="{A538465F-3EE6-47D9-826F-45C312422343}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" que tambÃ©m conta com LÃ©o Lins"
+          DTS:DTSID="{28186E03-5D87-4244-9AB9-3BEEFC564B13}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" Murilo Couto"
+          DTS:DTSID="{B831D138-90A7-4DFB-BDE8-22450E41FCAF}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" a assistente de palco Juliana e o locutor Diguinho Coruja  A trilha sonora fica por conta da banda Ultraje a Rigor e os comentÃ¡rios sÃ£o cortesia do vocalista Roger Moreira  Completam o grupo o baixista Mingau"
+          DTS:DTSID="{FCA4D75D-AF6C-42CB-A700-81F0DFA6F85B}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" o guitarrista Marcos Kleine e o baterista Bacalhau Veja mais em http   www sbt com br thenoite Inscreva-se no canal do The Noite  http   www youtube com sbtthenoiteCurta a pÃ¡gina do programa no Facebook   https   www facebook com SBTTheNoiteSiga o perfil oficial do programa no Twitter https   twitter com SBTTheNoiteE no Instagram https   www instagram com sbtthenoite&quot;&quot;&quot; Vu6PNpYKu2U"
+          DTS:DTSID="{9F1DC3CF-E21C-4696-8C3B-358D6259C1A7}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="DICAS DA RODADA 2 | CARTOLA FC 2020  BORA MITAR E ACUMULAR CARTOLETAS!"
+          DTS:DTSID="{F7CC8374-F116-4EEB-8D15-792756ADB6EA}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-11T17 14 20Z"
+          DTS:DTSID="{1849FC09-6688-4D63-821B-A2289D8C5BEE}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="UCJVbvkrBLp7L2pnaqc5CmQQ"
+          DTS:DTSID="{3A36CA9C-75AB-40CC-A9C3-607A55BCA9AD}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Cartoleiros Gazeta do Povo"
+          DTS:DTSID="{C7D3880F-9B35-45E8-8311-5F14F7927D31}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="17"
+          DTS:DTSID="{728C10AE-AA6B-4161-AD8F-390B485CF8A5}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-12T00 00 00Z"
+          DTS:DTSID="{49FE79C9-CD00-4275-B81D-CAC9F18F64A2}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="cartola|cartola fc|cartola 2020|dicas cartola 2020|cartola fc 2020|cartoleiros gazeta do povo|gazeta do povo cartola|cartoleiros gp|professor cartola|dicas cartola 2Âª rodada|dicas cartola rodada 2|futeloucos"
+          DTS:DTSID="{2851DBF5-CEA5-406E-987E-145911D69AFC}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="117217"
+          DTS:DTSID="{387F75DD-CC1E-499B-9D4D-D61E16244E85}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="14220"
+          DTS:DTSID="{4EADDD8B-6A08-4D01-B3AC-14BD644D1F98}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="106"
+          DTS:DTSID="{D4DBC65B-4828-4F30-87A8-0396BE8C4C40}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="785"
+          DTS:DTSID="{F619936E-9480-45D3-8174-DA43276F211C}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="https   i ytimg com vi Vu6PNpYKu2U default jpg"
+          DTS:DTSID="{6B29A17A-E09A-4EBB-9F3F-73A33D2B4281}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{5B831F93-14F0-42A5-B9C2-BEF01F0B9B01}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{E1D2044E-D9BE-4F91-9D43-F7C2F2376C90}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;&quot;&quot;No vÃ­deo"
+          DTS:DTSID="{954C29BD-0C25-43C0-89D1-2CC7486C5D9F}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" time principal"
+          DTS:DTSID="{7A0B4B8A-202A-4396-A81C-135F2D323F34}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" time para liga tiro curto e tambÃ©m de valorizaÃ§Ã£o para te ajudar na 2Âª rodada do Cartola FC 2020 que Ã© fundamental para engordar os cofres! #cartola #cartolafc #cartolafc2020- InscriÃ§Ã£o para liga tiro curto Futeloucos com premiaÃ§Ã£o  http   futeloucos com site index php user registrar ?code 8608955- Receba as dicas da rodada no seu e-mail  https   bit ly 3imY7Kn***SugestÃ£o de time bom e barato  Rafael; Juninho Capixaba e Aderlan (capitÃ£o); Bruno Fuchs e Aguilar; Patrick de Paula"
+          DTS:DTSID="{E4117C8C-A214-45FA-832A-3A74FFF31131}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" Everton Ribeiro e Nathan; ClÃ©ber"
+          DTS:DTSID="{C794FE59-1FAD-40AE-B0D0-AB4E9B954699}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" Savarino e Gabigol  TÃ©cnico  Felipe ConceiÃ§Ã£o  Custo  C$ 84"
+          DTS:DTSID="{C93D692C-F3D7-4DFA-B2AD-5AA974C8551A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="01 ***VOCÃŠ PODE SE TORNAR UM CARTOLEIRO PREMIUM E GARANTIR NOSSAS DICAS EXTRAS E EXCLUSIVAS PARA TODA A TEMPORADA 2020!Sendo assinante"
+          DTS:DTSID="{13160945-7ED2-4BC2-9AE3-D1FB3B642970}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" vocÃª terÃ¡ acesso a ðŸŽ© Grupos exclusivo para receber as dicas extras do ProfessorðŸŽ© Acesso aos times pessoais do Professor e do CasÃ£o em todas as rodadasðŸŽ© ConteÃºdo voltado para liga tiro curto e de rodada ÃºnicaðŸŽ© Live exclusiva no YouTubeðŸŽ© Central de Atendimento para tirar dÃºvidas individuaisðŸŽ© E muito mais!Ficou interessado? Ã‰ sÃ³ clicar aqui  http   bit ly 2rpTyty***Siga o Cartoleiros tambÃ©m no Instagram  https   www instagram com cartoleirosgp Grupo gratuito no Telegram  https   t me cartoleirosgazetaTwitter  https   twitter com Cartoleiros_GPBlog  https   www gazetadopovo com br blogs cartoleiros E-mail profissional  cartoleirosgp@gmail com***&quot;&quot;&quot; ly8jXKq_9AE"
+          DTS:DTSID="{7A46ABB5-21EA-41FA-AB62-797A688F7490}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="LIVE PLAYLIST DA TAY "
+          DTS:DTSID="{E82B49A7-54A2-4040-BAB7-FDB72E191635}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-12T03 31 08Z"
+          DTS:DTSID="{7DD38EC9-DADA-4371-B01E-AA1E2718B357}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="UCg9nWuUISG69Hv2VaCrE72w"
+          DTS:DTSID="{AB96EA55-ADC2-4665-BF14-C682FEF262B2}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Tayara Andreza"
+          DTS:DTSID="{5CB5CD87-803C-44C5-8A27-E48FF19F6DC3}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="10"
+          DTS:DTSID="{20247DEF-58BA-454F-9E61-98BFD172E01B}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-12T00 00 00Z"
+          DTS:DTSID="{2159871B-338D-4B58-AB79-996268A6ADCF}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" None "
+          DTS:DTSID="{B6C122A9-2A54-45E3-9329-75E5CD7F3E1B}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="93022"
+          DTS:DTSID="{19D0ED8A-F6D2-4725-A3E7-8168FDCD7D73}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="7595"
+          DTS:DTSID="{C4356658-A550-49FC-886F-8584B3F61C9C}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="166"
+          DTS:DTSID="{0C56E258-93F7-4A48-B50E-DC8F9E5C42B9}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="136"
+          DTS:DTSID="{C0BC2CE4-F1F0-44AC-8ED8-A652E7151EE6}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="https   i ytimg com vi ly8jXKq_9AE default jpg"
+          DTS:DTSID="{3C028F05-9B1B-4154-9D27-BFDD23535F95}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{5866BDE7-6154-4379-A3E5-49D9512A0232}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{196447FD-4287-40B6-88BC-113EE759D69E}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="#playlistdatay #tayaraandreza #taydeumjeitodiferente #brega #tay #arrocha QAUqqcEU0Xc"
+          DTS:DTSID="{94210C36-8878-475B-8DA9-13A118EDE18B}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="PEDI ELA EM NAMORO? FIZ UM JANTAR ROMÃ‚NTICO PRA ELA!"
+          DTS:DTSID="{8CE4C963-2395-42F0-9293-7BE53674F851}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-11T00 02 35Z"
+          DTS:DTSID="{2DD22610-8EAA-415A-AFA2-FFDE966DC211}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="UCOPS25AxMB9te9_-AHt3JEg"
+          DTS:DTSID="{A4BD2043-B66B-4F31-8E0A-93B8D8B29066}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="PEIXE"
+          DTS:DTSID="{4D85BEB7-79A7-407F-B8E8-1DB1DD8BAC3B}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="24"
+          DTS:DTSID="{BFAC1922-7A9A-4C02-85B9-C8026A192F27}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-12T00 00 00Z"
+          DTS:DTSID="{795B64F3-CBF3-4FE7-BABB-8129A416739A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="peixe|peixinho"
+          DTS:DTSID="{5EB7DF53-D416-4E5D-8674-702BF62024B3}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="1427499"
+          DTS:DTSID="{A4B0411D-7B27-4008-9DCF-245E0624994A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="225365"
+          DTS:DTSID="{25DA5B9B-438D-47C4-A19B-1B9F62D68F96}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2287"
+          DTS:DTSID="{C95B060C-C355-42D9-B9F8-B9D4A35BF292}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="9647"
+          DTS:DTSID="{C327CFBF-BDCE-4E5A-8424-8F754903CA00}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="https   i ytimg com vi QAUqqcEU0Xc default jpg"
+          DTS:DTSID="{6BFAD2D1-6345-4027-A678-E2294F195FB9}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{93400316-EF15-4E58-9A1C-27C4FB313522}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{82668DDE-F372-413C-A981-8AF412B23E60}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Neste video Espero que se divirtam!  )â–ºCANAIS DOS PARTICIPANTES E PLAYLIST TODOS VÃDEOS DA CASA Playlist âžœ https   www youtube com playlist?list PLrT75fWIkg088N2Q_h1Hw5Lq-j9YWxAOCCanais  âžœ Gregory Kessey  https   www youtube com GregoryKesseyâžœPeixinho  https   www youtube com PeixeâžœIngrid ohara  https   www youtube com IngridOharaTV âžœVivi Wanderley  https   www youtube com ViviWanderleyâžœLuiza Parente  https   www youtube com channel UCRKMoImiahCNu833HVQVhBAâžœ190 Pietro  https   www youtube com channel UCGfBwrCoi9ZJjKiUK8MmJNwâžœJoÃ£o Caetano  https   www youtube com JoÃ£oCaetanoyoutuberâžœJully Molinna  https   www youtube com jullymolinnablogâžœBya Kessey  https   www instagram com ByaKessey eA4FRvf6vdM"
+          DTS:DTSID="{B23DCDB0-C678-430D-A414-7812B3FC1DD8}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="AO VIVO - ApresentaÃ§Ã£o do meia Carlinhos e bate-papo com Ricardo"
+          DTS:DTSID="{F6B8852C-5138-4F80-98CE-049AB4FFDE55}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-12T00 58 57Z"
+          DTS:DTSID="{9B465BEE-0111-4C62-8947-7F8AD692271D}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="UCZD5qcen7lbLPFTjfvdLFcw"
+          DTS:DTSID="{089F0348-20EC-4C7B-8D5B-8ECDF04FAAE1}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Vasco TV"
+          DTS:DTSID="{3349FB10-DA24-4274-8CD5-07E1277848A7}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="17"
+          DTS:DTSID="{3F6D100C-6412-4256-A22C-F368B82D1827}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-12T00 00 00Z"
+          DTS:DTSID="{0DD1D074-6971-4E55-AD17-06CED3713E81}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="#Vasco|#VascoDaGama|#VascoTV|#FutebolBrasileiro"
+          DTS:DTSID="{8B2F4063-E3B2-4D1F-B7DE-798ECD1F03CF}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="97711"
+          DTS:DTSID="{7303C6A5-EC92-40E0-ACD0-29477BFC97D1}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="17153"
+          DTS:DTSID="{7A0C8C48-21D3-4A56-BAA5-418835667EA2}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="65"
+          DTS:DTSID="{451598BF-D5BC-4346-9B4B-025B235CB639}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="226"
+          DTS:DTSID="{B099C5C5-2919-4720-8C33-E770AC192E6D}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="https   i ytimg com vi eA4FRvf6vdM default jpg"
+          DTS:DTSID="{A299AA38-4F52-41A5-BE54-1896A0EBEFEC}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{451B8E82-9F33-4454-A1AD-57F08EE05C7F}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{2EB184C2-F75E-4EBF-8099-2C4D2382468F}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" 8f70QZQB4UA"
+          DTS:DTSID="{845EA68B-9690-4F3D-8EA4-D0604AB0B09F}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="MASTERCHEF BRASIL (11 08 2020) | PARTE 2 | EP 05 | TEMP 07"
+          DTS:DTSID="{3C1294C3-D325-439C-9578-203E62EA43E1}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-12T08 02 01Z"
+          DTS:DTSID="{1F7BD343-9028-439D-9662-2A9A0338E0B5}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="UC2EWGw-KBjEReUbXMJEiaCA"
+          DTS:DTSID="{DAF207F3-D722-4A10-A52C-A507DB80E87C}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="MasterChef Brasil"
+          DTS:DTSID="{1D3131D6-0BC3-4869-AA9C-11A355391C61}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="24"
+          DTS:DTSID="{F1B288C9-C396-42CC-85EF-12297745FA93}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-12T00 00 00Z"
+          DTS:DTSID="{6358DE7E-AD12-4D53-A938-F24C76D64912}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="masterchef temporada 7|participantes do masterchef 2020|masterchef 11  08  2020|masterchef brasil 2020|masterchef 11 08 2020|participantes masterchef 2020|masterchefbrasil|assistir masterchef online|assistir tv online|assistir band ao vivo|masterchef ao vivo|masterchef online|master chef|masterchef 2020|quem saiu do masterchef|eliminado masterchef 2020|paola carosella|erick jacquin|henrique fogaÃ§a"
+          DTS:DTSID="{C8E9F3FA-F129-4FE3-91C6-A917BAAC894D}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="199577"
+          DTS:DTSID="{A5E48DCE-809C-42D2-BB77-3EA2BA6E84E5}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="7700"
+          DTS:DTSID="{5F7588BA-B712-4D1A-9723-41E31BFDDE22}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="129"
+          DTS:DTSID="{ED2AB077-43E5-4464-8E9C-7DE8FC32DEF3}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="874"
+          DTS:DTSID="{149F5BEB-0FB8-445D-9D55-5D7B03AAD491}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="https   i ytimg com vi 8f70QZQB4UA default jpg"
+          DTS:DTSID="{0F9C16D4-6BA7-45A3-9687-92F398AC3A2D}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{A915FC98-3332-47D5-84ED-0EFC34C71048}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{66A93BD7-FD82-4821-878A-6E37787B666E}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;&quot;&quot;Assista Ã  Parte 2 do EpisÃ³dio 5 da 7Âª Temporada de MasterChef Brasil  #MasterChefBrasil no YouTube"
+          DTS:DTSID="{9CF966D8-5608-48AC-A546-12FA7F6F8AF5}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" inscreva-se no canal  https   goo gl hcUL7XConheÃ§a os Produtos #MasterChefBR ChicoRei  https   bit ly 2CGO1odLabel Rouge  https   bit ly 3j9r5OVAcvita  https   bit ly 3h7mLxXAvon  https   bit ly 3eCaHmPBaldoni  https   bit ly 3fBzybxCacau Show  https   bit ly 3h3XxR4FestColor  https   bit ly 32r0KpULiquigas  https   bit ly 3eBUe1YVemplast  https   bit ly 2Ox26qMAssista tambÃ©m  Dicas MasterChef  https   goo gl nBOlsjMasterChef A Revanche | 1Âª Temporada (Completa)  https   bit ly 3easm6aMasterChef Brasil | 6Âª Temporada (Completa)  https   bit ly 2Xj62kvMasterChef Brasil | 5Âª Temporada (Completa)  https   bit ly 2Xm0Rk4MasterChef Brasil | 4Âª Temporada (Completa)  https   bit ly 2V8fSmIMasterChef Brasil | 3Âª Temporada (Completa)  https   bit ly 2Vdkfgj MasterChef Brasil | 2Âª Temporada (Completa)  https   bit ly 2RmXfdGMasterChef Brasil | 1Âª Temporada (Completa)  https   bit ly 2Vbp0qQ MasterChef Junior Brasil | 1Âª Temporada (Completa)  https   bit ly 3e8AzHF#MasterChefProfissionais | 1Âª Temporada (Completa)  https   bit ly 2XkML2k MasterChef Profissionais| 2Âª Temporada (Completa)  https   bit ly 2Ro18inMasterChef Profissionais| 3Âª Temporada (Completa)  https   bit ly 2x4R33dOs comentÃ¡rios nos vÃ­deos do canal MasterChef Brasil implicam na autorizaÃ§Ã£o de uso gratuito e sem limitaÃ§Ã£o da imagem a critÃ©rio exclusivo da Endemol Shine Brasil"
+          DTS:DTSID="{4F851769-0ED7-4B45-9ED2-1F223587CF73}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" para posterior publicaÃ§Ã£o"
+          DTS:DTSID="{C9B886F6-5D3B-4540-97E6-706411BAA52B}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" transmissÃ£o"
+          DTS:DTSID="{70CE0C25-427A-4F1A-B241-42454E85374D}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" retransmissÃ£o"
+          DTS:DTSID="{B2D06DBF-4DDC-49DC-BBC1-D742540D157D}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" reproduÃ§Ã£o"
+          DTS:DTSID="{F3C32A8C-41FF-43E2-8DB4-1AFF6D98DE48}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" distribuiÃ§Ã£o ou divulgaÃ§Ã£o em TV"
+          DTS:DTSID="{CA4EA469-262F-48FC-833F-C57E52D6A57F}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" cinema"
+          DTS:DTSID="{53C9BFE7-79C3-4EB1-9CEE-9E4342384F1A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" rÃ¡dio"
+          DTS:DTSID="{49098BBF-6C94-462E-BAEA-68E7053BCECE}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" internet"
+          DTS:DTSID="{7A5AA7F9-D77D-4A34-8F91-0FFEEC434848}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" publicidade ou qualquer outro veÃ­culo de comunicaÃ§Ã£o"
+          DTS:DTSID="{CF085C7B-E449-483F-B25B-D5BA5A40D129}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" produÃ§Ã£o de DVD e home-video"
+          DTS:DTSID="{4EFCFB07-5313-4B32-A2EB-A3A9381E74AB}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName=" sem que caracterize uso indevido ou qualquer outra violaÃ§Ã£o de direitos e sem que deste uso decorra qualquer Ã´nus   indenizaÃ§Ã£o &quot;&quot;&quot; oH8wiqTGKrM"
+          DTS:DTSID="{5E27DD94-02EA-4C7B-AD51-66428F6C55D4}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="DIA DE FAZER COMPRAS DO MES!!"
+          DTS:DTSID="{8742BE52-2CD1-4582-AC16-C28F68D452D0}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-11T23 36 58Z"
+          DTS:DTSID="{76F0A7EA-6423-440A-BFA6-ACA8E97352C4}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="UCIu-mBi1wc4Dt-WPzR0xRvA"
+          DTS:DTSID="{7B77AC8F-DCC5-4925-907E-E04A96BA88A2}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="PAMRIQUE"
+          DTS:DTSID="{0A2E4E82-05CE-44C5-88DB-2E3559134ABA}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="24"
+          DTS:DTSID="{0609C65B-B76E-431D-80F5-3548361DAB61}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="2020-08-12T00 00 00Z"
+          DTS:DTSID="{17AC1F49-8F8B-490E-8E32-84060E751591}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="pam rodrigues|pamella rodrigues|pamvlog"
+          DTS:DTSID="{2B8D49C9-42EE-4183-9D4A-077B6B9434BD}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="41592"
+          DTS:DTSID="{B88808E6-0D9E-4124-AAFA-CDCA3489C2AE}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="18109"
+          DTS:DTSID="{663F3C30-C9AE-41EA-97A1-414BB6B6C328}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="88"
+          DTS:DTSID="{9FDC2364-3750-4C7B-9A8E-1427C0165D9F}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="690"
+          DTS:DTSID="{322E2A0C-1DF1-4200-B184-17F7ACB652D9}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="https   i ytimg com vi oH8wiqTGKrM default jpg"
+          DTS:DTSID="{FC7AE55B-8AB2-48BB-90F8-F557DFFAFAF2}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{32608D4F-E885-4220-B3E2-87CA2B3CCBB2}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="False"
+          DTS:DTSID="{9019034C-8935-4D89-8599-E89E7E8585EF}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="&quot;Meu canal principal  https   www youtube com pamellarodriguestv"
+          DTS:DTSID="{B68EFEB2-3E9F-40A5-9165-4DC1936FE383}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,40 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\GBG_Academy sessions\\Online Sessions\\Tasks\\Task2_Youtube_Data\\YoutubeAnalysis\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8CE414BB-95B2-4C99-9E03-51BA72086E22}|YoutubeAnalysis\\YoutubeAnalysis.smproj|D:\\GBG_Academy sessions\\Online Sessions\\Tasks\\Task2_Youtube_Data\\YoutubeAnalysis\\YoutubeAnalysis\\Model.bim||{9EE154FA-5389-414A-9FA1-1D9F0221267D}",
+      "RelativeMoniker": "D:0:0:{8CE414BB-95B2-4C99-9E03-51BA72086E22}|YoutubeAnalysis\\YoutubeAnalysis.smproj|solutionrelative:YoutubeAnalysis\\Model.bim||{9EE154FA-5389-414A-9FA1-1D9F0221267D}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a83394e3-39c2-4678-a3c8-364b69d78fd3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Model.bim",
+              "DocumentMoniker": "D:\\GBG_Academy sessions\\Online Sessions\\Tasks\\Task2_Youtube_Data\\YoutubeAnalysis\\YoutubeAnalysis\\Model.bim",
+              "RelativeDocumentMoniker": "YoutubeAnalysis\\Model.bim",
+              "ToolTip": "D:\\GBG_Academy sessions\\Online Sessions\\Tasks\\Task2_Youtube_Data\\YoutubeAnalysis\\YoutubeAnalysis\\Model.bim*",
+              "RelativeToolTip": "YoutubeAnalysis\\Model.bim*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-08T13:01:57.925Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

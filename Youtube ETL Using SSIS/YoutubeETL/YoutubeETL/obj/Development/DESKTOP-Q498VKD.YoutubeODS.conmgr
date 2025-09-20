@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-Q498VKD.YoutubeODS"
+  DTS:DTSID="{69E33F96-6074-4F5F-B317-1CDD463573ED}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-Q498VKD;Initial Catalog=YoutubeODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-YoutubeETL-{69E33F96-6074-4F5F-B317-1CDD463573ED}DESKTOP-Q498VKD.YoutubeODS;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

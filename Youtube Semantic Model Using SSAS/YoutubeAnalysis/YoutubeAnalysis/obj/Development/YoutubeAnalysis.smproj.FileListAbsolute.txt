@@ -1,0 +1,8 @@
+D:\GBG_Academy sessions\Online Sessions\Tasks\Task2_Youtube_Data\YoutubeAnalysis\YoutubeAnalysis\bin\Model.asdatabase
+D:\GBG_Academy sessions\Online Sessions\Tasks\Task2_Youtube_Data\YoutubeAnalysis\YoutubeAnalysis\bin\Model.deploymenttargets
+D:\GBG_Academy sessions\Online Sessions\Tasks\Task2_Youtube_Data\YoutubeAnalysis\YoutubeAnalysis\bin\Model.deploymentoptions
+D:\GBG_Academy sessions\Online Sessions\Tasks\Task2_Youtube_Data\YoutubeAnalysis\YoutubeAnalysis\obj\Development\YoutubeAnalysis.smproj.AssemblyReference.cache
+D:\GBG_Academy sessions\Online Sessions\Tasks\Task2_Youtube_Data\YoutubeAnalysis\YoutubeAnalysis\obj\Development\YoutubeAnalysis.smproj.CoreCompileInputs.cache
+D:\GBG_Academy sessions\Online Sessions\Tasks\Task2_Youtube_Data\YoutubeAnalysis\YoutubeAnalysis\obj\Development\Model.asdatabase
+D:\GBG_Academy sessions\Online Sessions\Tasks\Task2_Youtube_Data\YoutubeAnalysis\YoutubeAnalysis\obj\Development\Model.deploymentoptions
+D:\GBG_Academy sessions\Online Sessions\Tasks\Task2_Youtube_Data\YoutubeAnalysis\YoutubeAnalysis\obj\Development\Model.deploymenttargets

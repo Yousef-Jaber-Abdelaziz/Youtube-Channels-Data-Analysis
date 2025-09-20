@@ -1,0 +1,2376 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/7/2025 3:35:10 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-Q498VKD"
+  DTS:CreatorName="DESKTOP-Q498VKD\Yousef Jaber"
+  DTS:DTSID="{9D575A3C-F7D9-4E78-8370-F9F4DC41F9F7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{4A90F2FB-3990-477E-8C35-8F6528F7B950}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dimensions"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{ABA7DDEF-5617-4A6A-9E64-D749E4046356}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dimensions">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Dimensions\CategoryDim"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{2C29564C-6D03-4638-9A86-D8207F5BCE96}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CategoryDim"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Dimensions\CategoryDim\CategoryDimSTG"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="CategoryDimSTG"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Category]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dimensions\CategoryDim\CategoryDimSTG.Connections[OleDbConnection]"
+                      connectionManagerID="{14143AAD-1871-4497-9E7C-864CB0037603}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-Q498VKD.YoutubeSTG]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Dimensions\CategoryDim\CategoryDimSTG.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dimensions\CategoryDim\CategoryDimSTG.Inputs[OLE DB Destination Input].Columns[Category]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Category"
+                          externalMetadataColumnId="Package\Dimensions\CategoryDim\CategoryDimSTG.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                          lineageId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Output].Columns[Category]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dimensions\CategoryDim\CategoryDimSTG.Inputs[OLE DB Destination Input].ExternalColumns[CategoryID]"
+                          dataType="i4"
+                          name="CategoryID" />
+                        <externalMetadataColumn
+                          refId="Package\Dimensions\CategoryDim\CategoryDimSTG.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Category" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\CategoryDim\CategoryDimSTG.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Dimensions\CategoryDim\CategoryDimSTG.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\CategoryDim\CategoryDimSTG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\CategoryDim\CategoryDimSTG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\CategoryDim\CategoryDimSTG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\CategoryDim\CategoryDimSTG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dimensions\CategoryDim\CategoryMappingSTG"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="CategoryMappingSTG"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[CategoryMap]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Connections[OleDbConnection]"
+                      connectionManagerID="{14143AAD-1871-4497-9E7C-864CB0037603}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-Q498VKD.YoutubeSTG]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Output].Columns[Category]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                          length="100"
+                          lineageId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Output].Columns[Category]"
+                          name="Category"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Output].ExternalColumns[CategoryID]"
+                          dataType="i4"
+                          name="CategoryID" />
+                        <externalMetadataColumn
+                          refId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Category" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Error Output].Columns[Category]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Error Output].Columns[Category]"
+                          name="Category" />
+                        <outputColumn
+                          refId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Dimensions\CategoryDim.Paths[OLE DB Source Output]"
+                  endId="Package\Dimensions\CategoryDim\CategoryDimSTG.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Dimensions\CategoryDim\CategoryMappingSTG.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dimensions\ChannelsDim"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{CFFF55BD-FDE4-4289-974F-867A524CED26}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ChannelsDim"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Dimensions\ChannelsDim\YoutubeODSSource"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="YoutubeODSSource"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT ChannelTitle
+FROM            videos</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Connections[OleDbConnection]"
+                      connectionManagerID="{69E33F96-6074-4F5F-B317-1CDD463573ED}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-Q498VKD.YoutubeODS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[ChannelTitle]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[ChannelTitle]"
+                          length="255"
+                          lineageId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[ChannelTitle]"
+                          name="ChannelTitle"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[ChannelTitle]"
+                          dataType="wstr"
+                          length="255"
+                          name="ChannelTitle" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ChannelTitle]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ChannelTitle]"
+                          name="ChannelTitle" />
+                        <outputColumn
+                          refId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dimensions\ChannelsDim\YoutubeSTGChannels"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="YoutubeSTGChannels"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Channels]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dimensions\ChannelsDim\YoutubeSTGChannels.Connections[OleDbConnection]"
+                      connectionManagerID="{14143AAD-1871-4497-9E7C-864CB0037603}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-Q498VKD.YoutubeSTG]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Dimensions\ChannelsDim\YoutubeSTGChannels.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dimensions\ChannelsDim\YoutubeSTGChannels.Inputs[OLE DB Destination Input].Columns[ChannelTitle]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ChannelTitle"
+                          externalMetadataColumnId="Package\Dimensions\ChannelsDim\YoutubeSTGChannels.Inputs[OLE DB Destination Input].ExternalColumns[ChannelTitle]"
+                          lineageId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[ChannelTitle]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dimensions\ChannelsDim\YoutubeSTGChannels.Inputs[OLE DB Destination Input].ExternalColumns[ChannelID]"
+                          dataType="i4"
+                          name="ChannelID" />
+                        <externalMetadataColumn
+                          refId="Package\Dimensions\ChannelsDim\YoutubeSTGChannels.Inputs[OLE DB Destination Input].ExternalColumns[ChannelTitle]"
+                          dataType="wstr"
+                          length="255"
+                          name="ChannelTitle" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\ChannelsDim\YoutubeSTGChannels.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Dimensions\ChannelsDim\YoutubeSTGChannels.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\ChannelsDim\YoutubeSTGChannels.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\ChannelsDim\YoutubeSTGChannels.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\ChannelsDim\YoutubeSTGChannels.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\ChannelsDim\YoutubeSTGChannels.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Dimensions\ChannelsDim.Paths[OLE DB Source Output]"
+                  endId="Package\Dimensions\ChannelsDim\YoutubeSTGChannels.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Dimensions\ChannelsDim\YoutubeODSSource.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dimensions\CountryDim"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{F4896F81-E4BC-44CD-9DCE-9A8F48584763}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CountryDim"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Dimensions\CountryDim\YoutubeODSSource"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="YoutubeODSSource"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[videos]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT trim(Country) as Country
+FROM            videos</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dimensions\CountryDim\YoutubeODSSource.Connections[OleDbConnection]"
+                      connectionManagerID="{69E33F96-6074-4F5F-B317-1CDD463573ED}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-Q498VKD.YoutubeODS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\CountryDim\YoutubeODSSource.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\CountryDim\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[Country]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dimensions\CountryDim\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                          length="24"
+                          lineageId="Package\Dimensions\CountryDim\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[Country]"
+                          name="Country"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dimensions\CountryDim\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                          dataType="wstr"
+                          length="24"
+                          name="Country" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Dimensions\CountryDim\YoutubeODSSource.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\CountryDim\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[Country]"
+                          dataType="wstr"
+                          length="24"
+                          lineageId="Package\Dimensions\CountryDim\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[Country]"
+                          name="Country" />
+                        <outputColumn
+                          refId="Package\Dimensions\CountryDim\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\CountryDim\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\CountryDim\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\CountryDim\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dimensions\CountryDim\YoutubeSTGCountry"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="YoutubeSTGCountry"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Country]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dimensions\CountryDim\YoutubeSTGCountry.Connections[OleDbConnection]"
+                      connectionManagerID="{14143AAD-1871-4497-9E7C-864CB0037603}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-Q498VKD.YoutubeSTG]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Dimensions\CountryDim\YoutubeSTGCountry.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dimensions\CountryDim\YoutubeSTGCountry.Inputs[OLE DB Destination Input].Columns[Country]"
+                          cachedDataType="wstr"
+                          cachedLength="24"
+                          cachedName="Country"
+                          externalMetadataColumnId="Package\Dimensions\CountryDim\YoutubeSTGCountry.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          lineageId="Package\Dimensions\CountryDim\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[Country]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dimensions\CountryDim\YoutubeSTGCountry.Inputs[OLE DB Destination Input].ExternalColumns[CountryID]"
+                          dataType="i4"
+                          name="CountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Dimensions\CountryDim\YoutubeSTGCountry.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          dataType="wstr"
+                          length="24"
+                          name="Country" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\CountryDim\YoutubeSTGCountry.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Dimensions\CountryDim\YoutubeSTGCountry.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\CountryDim\YoutubeSTGCountry.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\CountryDim\YoutubeSTGCountry.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\CountryDim\YoutubeSTGCountry.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\CountryDim\YoutubeSTGCountry.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Dimensions\CountryDim.Paths[OLE DB Source Output]"
+                  endId="Package\Dimensions\CountryDim\YoutubeSTGCountry.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Dimensions\CountryDim\YoutubeODSSource.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dimensions\Tryncate the Dimensions"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{DEB307C9-1E63-4305-990A-3CB1A5B915B6}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tryncate the Dimensions"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{14143AAD-1871-4497-9E7C-864CB0037603}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE Country&#xA;TRUNCATE TABLE Channels&#xA;TRUNCATE TABLE Category" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dimensions.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{76617DBC-C5D5-4F4D-BFFC-F2A859E94B3A}"
+          DTS:From="Package\Dimensions\Tryncate the Dimensions"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Dimensions\CountryDim" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dimensions.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{0767D770-0E46-468E-B579-CA26D362660B}"
+          DTS:From="Package\Dimensions\CountryDim"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Dimensions\ChannelsDim" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dimensions.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{C88757E0-818E-43E4-A245-F23BE2F28D99}"
+          DTS:From="Package\Dimensions\ChannelsDim"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Dimensions\CategoryDim" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fact"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{56C4D238-5DDB-45CF-ACF5-E6F55E529BC3}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fact">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fact\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{45E87361-9A1D-4545-954A-BD92F39AA251}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Fact\Data Flow Task\BooleanColsConversion"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="BooleanColsConversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Fact\Data Flow Task\BooleanColsConversion.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\BooleanColsConversion.Inputs[Derived Column Input].Columns[CommentsDisabled]"
+                          cachedDataType="bool"
+                          cachedName="CommentsDisabled"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[CommentsDisabled]" />
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\BooleanColsConversion.Inputs[Derived Column Input].Columns[RatingsDisabled]"
+                          cachedDataType="bool"
+                          cachedName="RatingsDisabled"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[RatingsDisabled]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Fact\Data Flow Task\BooleanColsConversion.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Fact\Data Flow Task\BooleanColsConversion.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\BooleanColsConversion.Outputs[Derived Column Output].Columns[CommentsDisabledDR]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Fact\Data Flow Task\BooleanColsConversion.Outputs[Derived Column Output].Columns[CommentsDisabledDR]"
+                          name="CommentsDisabledDR"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">#{Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[CommentsDisabled]} ==  TRUE  ? (DT_I4)1 : (DT_I4)0</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">CommentsDisabled ==  TRUE  ? (DT_I4)1 : (DT_I4)0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\BooleanColsConversion.Outputs[Derived Column Output].Columns[RatingsDisabledDR]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Fact\Data Flow Task\BooleanColsConversion.Outputs[Derived Column Output].Columns[RatingsDisabledDR]"
+                          name="RatingsDisabledDR"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">#{Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[RatingsDisabled]} ==  TRUE  ? (DT_I4)1 : (DT_I4)0</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">RatingsDisabled ==  TRUE  ? (DT_I4)1 : (DT_I4)0</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Fact\Data Flow Task\BooleanColsConversion.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Fact\Data Flow Task\BooleanColsConversion.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\BooleanColsConversion.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\BooleanColsConversion.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\BooleanColsConversion.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\BooleanColsConversion.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Fact\Data Flow Task\CategoryMatchLookup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="CategoryMatchLookup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[CategoryMap]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[CategoryMap]) [refTable]
+where [refTable].[CategoryID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CategoryID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Category" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[CategoryID]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Fact\Data Flow Task\CategoryMatchLookup.Connections[OleDbConnection]"
+                      connectionManagerID="{14143AAD-1871-4497-9E7C-864CB0037603}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-Q498VKD.YoutubeSTG]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Fact\Data Flow Task\CategoryMatchLookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\CategoryMatchLookup.Inputs[Lookup Input].Columns[CategoryID]"
+                          cachedDataType="i4"
+                          cachedName="CategoryID"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[CategoryID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CategoryID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Fact\Data Flow Task\CategoryMatchLookup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Fact\Data Flow Task\CategoryMatchLookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\CategoryMatchLookup.Outputs[Lookup Match Output].Columns[Category]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Copy Column"
+                          length="100"
+                          lineageId="Package\Fact\Data Flow Task\CategoryMatchLookup.Outputs[Lookup Match Output].Columns[Category]"
+                          name="Category"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">Category</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Fact\Data Flow Task\CategoryMatchLookup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Fact\Data Flow Task\CategoryMatchLookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Fact\Data Flow Task\CategoryMatchLookup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Fact\Data Flow Task\CategoryMatchLookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\CategoryMatchLookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\CategoryMatchLookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\CategoryMatchLookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\CategoryMatchLookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Fact\Data Flow Task\FixDateColumns"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="FixDateColumns"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Fact\Data Flow Task\FixDateColumns.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\FixDateColumns.Inputs[Derived Column Input].Columns[PublisheDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PublisheDate"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[PublisheDate]" />
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\FixDateColumns.Inputs[Derived Column Input].Columns[TrendingDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="TrendingDate"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[TrendingDate]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Fact\Data Flow Task\FixDateColumns.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Fact\Data Flow Task\FixDateColumns.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\FixDateColumns.Outputs[Derived Column Output].Columns[PublishedDateDR]"
+                          dataType="date"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Fact\Data Flow Task\FixDateColumns.Outputs[Derived Column Output].Columns[PublishedDateDR]"
+                          name="PublishedDateDR"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DATE)[REPLACE]([REPLACE](#{Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[PublisheDate]},"Z",""),"T"," ")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DATE)REPLACE(REPLACE(PublisheDate,"Z",""),"T"," ")</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\FixDateColumns.Outputs[Derived Column Output].Columns[TrendingDateDR]"
+                          dataType="date"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Fact\Data Flow Task\FixDateColumns.Outputs[Derived Column Output].Columns[TrendingDateDR]"
+                          name="TrendingDateDR"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DATE)[REPLACE]([REPLACE](#{Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[TrendingDate]},"Z",""),"T"," ")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DATE)REPLACE(REPLACE(TrendingDate,"Z",""),"T"," ")</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Fact\Data Flow Task\FixDateColumns.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Fact\Data Flow Task\FixDateColumns.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\FixDateColumns.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\FixDateColumns.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\FixDateColumns.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\FixDateColumns.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Fact\Data Flow Task\VideoFactSTG"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="VideoFactSTG"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[VideosFact]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Fact\Data Flow Task\VideoFactSTG.Connections[OleDbConnection]"
+                      connectionManagerID="{14143AAD-1871-4497-9E7C-864CB0037603}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-Q498VKD.YoutubeSTG]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].Columns[Likes]"
+                          cachedDataType="i4"
+                          cachedName="Likes"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[Likes]"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[Likes]" />
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].Columns[Dislikes]"
+                          cachedDataType="i4"
+                          cachedName="Dislikes"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[Dislikes]"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[Dislikes]" />
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].Columns[Country]"
+                          cachedDataType="wstr"
+                          cachedLength="24"
+                          cachedName="Country"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[Country]" />
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].Columns[Category]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Category"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                          lineageId="Package\Fact\Data Flow Task\CategoryMatchLookup.Outputs[Lookup Match Output].Columns[Category]" />
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].Columns[ViewCount]"
+                          cachedDataType="i4"
+                          cachedName="ViewCount"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[ViewCounts]"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[ViewCount]" />
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].Columns[CommentCount]"
+                          cachedDataType="i4"
+                          cachedName="CommentCount"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[CommentsCount]"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[CommentCount]" />
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].Columns[CommentsDisabledDR]"
+                          cachedDataType="i4"
+                          cachedName="CommentsDisabledDR"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[CommentsDisabled]"
+                          lineageId="Package\Fact\Data Flow Task\BooleanColsConversion.Outputs[Derived Column Output].Columns[CommentsDisabledDR]" />
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].Columns[RatingsDisabledDR]"
+                          cachedDataType="i4"
+                          cachedName="RatingsDisabledDR"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[RatesDisabled]"
+                          lineageId="Package\Fact\Data Flow Task\BooleanColsConversion.Outputs[Derived Column Output].Columns[RatingsDisabledDR]" />
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].Columns[PublishedDateDR]"
+                          cachedDataType="date"
+                          cachedName="PublishedDateDR"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[PublishDate]"
+                          lineageId="Package\Fact\Data Flow Task\FixDateColumns.Outputs[Derived Column Output].Columns[PublishedDateDR]" />
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].Columns[TrendingDateDR]"
+                          cachedDataType="date"
+                          cachedName="TrendingDateDR"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[TrendDate]"
+                          lineageId="Package\Fact\Data Flow Task\FixDateColumns.Outputs[Derived Column Output].Columns[TrendingDateDR]" />
+                        <inputColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].Columns[ChannelTitle]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ChannelTitle"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[ChannelTitle]"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[ChannelTitle]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[VideoID]"
+                          dataType="i4"
+                          name="VideoID" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[ViewCounts]"
+                          dataType="i4"
+                          name="ViewCounts" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[Likes]"
+                          dataType="i4"
+                          name="Likes" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[Dislikes]"
+                          dataType="i4"
+                          name="Dislikes" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[CommentsCount]"
+                          dataType="i4"
+                          name="CommentsCount" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[CommentsDisabled]"
+                          dataType="i4"
+                          name="CommentsDisabled" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[RatesDisabled]"
+                          dataType="i4"
+                          name="RatesDisabled" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[PublishDate]"
+                          dataType="dbDate"
+                          name="PublishDate" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[TrendDate]"
+                          dataType="dbDate"
+                          name="TrendDate" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[ChannelTitle]"
+                          dataType="wstr"
+                          length="255"
+                          name="ChannelTitle" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          dataType="wstr"
+                          length="50"
+                          name="Country" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Category" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Fact\Data Flow Task\VideoFactSTG.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\VideoFactSTG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\VideoFactSTG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\VideoFactSTG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Fact\Data Flow Task\YoutubeODSSource"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="YoutubeODSSource"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[videos]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Fact\Data Flow Task\YoutubeODSSource.Connections[OleDbConnection]"
+                      connectionManagerID="{69E33F96-6074-4F5F-B317-1CDD463573ED}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-Q498VKD.YoutubeODS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[PublisheDate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[PublisheDate]"
+                          length="50"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[PublisheDate]"
+                          name="PublisheDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[ChannelTitle]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[ChannelTitle]"
+                          length="255"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[ChannelTitle]"
+                          name="ChannelTitle"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[CategoryID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[CategoryID]"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[CategoryID]"
+                          name="CategoryID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[TrendingDate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[TrendingDate]"
+                          length="50"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[TrendingDate]"
+                          name="TrendingDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[ViewCount]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[ViewCount]"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[ViewCount]"
+                          name="ViewCount"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[Likes]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[Likes]"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[Likes]"
+                          name="Likes"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[Dislikes]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[Dislikes]"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[Dislikes]"
+                          name="Dislikes"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[CommentCount]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[CommentCount]"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[CommentCount]"
+                          name="CommentCount"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[CommentsDisabled]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[CommentsDisabled]"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[CommentsDisabled]"
+                          name="CommentsDisabled"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[RatingsDisabled]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[RatingsDisabled]"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[RatingsDisabled]"
+                          name="RatingsDisabled"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[Country]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                          length="24"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].Columns[Country]"
+                          name="Country"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[VideoID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="VideoID" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[PublisheDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PublisheDate" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[ChannelID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ChannelID" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[ChannelTitle]"
+                          dataType="wstr"
+                          length="255"
+                          name="ChannelTitle" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[CategoryID]"
+                          dataType="i4"
+                          name="CategoryID" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[TrendingDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="TrendingDate" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[ViewCount]"
+                          dataType="i4"
+                          name="ViewCount" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[Likes]"
+                          dataType="i4"
+                          name="Likes" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[Dislikes]"
+                          dataType="i4"
+                          name="Dislikes" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[CommentCount]"
+                          dataType="i4"
+                          name="CommentCount" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[CommentsDisabled]"
+                          dataType="bool"
+                          name="CommentsDisabled" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[RatingsDisabled]"
+                          dataType="bool"
+                          name="RatingsDisabled" />
+                        <externalMetadataColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                          dataType="wstr"
+                          length="24"
+                          name="Country" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[PublisheDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[PublisheDate]"
+                          name="PublisheDate" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ChannelTitle]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ChannelTitle]"
+                          name="ChannelTitle" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[CategoryID]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[CategoryID]"
+                          name="CategoryID" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[TrendingDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[TrendingDate]"
+                          name="TrendingDate" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ViewCount]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ViewCount]"
+                          name="ViewCount" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[Likes]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[Likes]"
+                          name="Likes" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[Dislikes]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[Dislikes]"
+                          name="Dislikes" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[CommentCount]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[CommentCount]"
+                          name="CommentCount" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[CommentsDisabled]"
+                          dataType="bool"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[CommentsDisabled]"
+                          name="CommentsDisabled" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[RatingsDisabled]"
+                          dataType="bool"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[RatingsDisabled]"
+                          name="RatingsDisabled" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[Country]"
+                          dataType="wstr"
+                          length="24"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[Country]"
+                          name="Country" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Fact\Data Flow Task.Paths[Derived Column Output]"
+                  endId="Package\Fact\Data Flow Task\BooleanColsConversion.Inputs[Derived Column Input]"
+                  name="Derived Column Output"
+                  startId="Package\Fact\Data Flow Task\FixDateColumns.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Fact\Data Flow Task.Paths[Derived Column Output1]"
+                  endId="Package\Fact\Data Flow Task\CategoryMatchLookup.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Fact\Data Flow Task\BooleanColsConversion.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Fact\Data Flow Task.Paths[Lookup Match Output]"
+                  endId="Package\Fact\Data Flow Task\VideoFactSTG.Inputs[OLE DB Destination Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Fact\Data Flow Task\CategoryMatchLookup.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Fact\Data Flow Task.Paths[OLE DB Source Output]"
+                  endId="Package\Fact\Data Flow Task\FixDateColumns.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Fact\Data Flow Task\YoutubeODSSource.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fact\TruncateFactTable"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{FB695055-DD53-47DA-BBDE-9FE55CCD05C1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TruncateFactTable"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{14143AAD-1871-4497-9E7C-864CB0037603}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE VideosFact" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fact.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{68DBC7F4-AF35-48A6-BB83-3347095C4E36}"
+          DTS:From="Package\Fact\TruncateFactTable"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Fact\Data Flow Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1A33B01F-9555-44EB-83EC-CC7508843C4B}"
+      DTS:From="Package\Dimensions"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Fact" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Dimensions\CategoryDim"
+          TopLeft="40.2222222222222,215.333333333333" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Dimensions\ChannelsDim"
+          TopLeft="39.1111111111111,150.333333333333" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Dimensions\CountryDim"
+          TopLeft="43,79.5555555555555" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Dimensions\Tryncate the Dimensions"
+          TopLeft="15.1111111111111,14.7777777777778" />
+        <EdgeLayout
+          Id="Package\Dimensions.PrecedenceConstraints[Constraint]"
+          TopLeft="113.555555555556,56.7777777777778">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.7777777777777"
+              Start="0,0"
+              End="0,15.2777777777777">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.2777777777777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensions.PrecedenceConstraints[Constraint 1]"
+          TopLeft="111.555555555556,121.555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.7777777777779"
+              Start="0,0"
+              End="0,21.2777777777779">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.2777777777779" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensions.PrecedenceConstraints[Constraint 2]"
+          TopLeft="111.666666666667,192.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.0000000000003"
+              Start="0,0"
+              End="0,15.5000000000003">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5000000000003" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="231,312"
+          Size="231,355"
+          Id="Package\Dimensions"
+          TopLeft="107.5,168.333333333333" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Fact\Data Flow Task"
+          TopLeft="53,82.5714285714287" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Fact\TruncateFactTable"
+          TopLeft="40.142857142857,6.85714285714283" />
+        <EdgeLayout
+          Id="Package\Fact.PrecedenceConstraints[Constraint]"
+          TopLeft="128.071428571428,48.8571428571428">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.7142857142858"
+              Start="0,0"
+              End="0,26.2142857142858">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2142857142858" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="254,180"
+          Size="254,223"
+          Id="Package\Fact"
+          TopLeft="432.619047619047,227.857142857143" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="338.5,342.595238095238">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="94.1190476190474,0"
+              Start="0,0"
+              End="86.6190476190474,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="86.6190476190474,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Dimensions\CategoryDim">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Dimensions\CategoryDim\CategoryDimSTG"
+          TopLeft="266,122" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Dimensions\CategoryDim\CategoryMappingSTG"
+          TopLeft="251,17" />
+        <EdgeLayout
+          Id="Package\Dimensions\CategoryDim.Paths[OLE DB Source Output]"
+          TopLeft="347,59">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\CategoryDim\CategoryDimSTG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\CategoryDim\CategoryMappingSTG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dimensions\ChannelsDim">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Dimensions\ChannelsDim\YoutubeSTGChannels"
+          TopLeft="238,112" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Dimensions\ChannelsDim\YoutubeODSSource"
+          TopLeft="241,12" />
+        <EdgeLayout
+          Id="Package\Dimensions\ChannelsDim.Paths[OLE DB Source Output]"
+          TopLeft="331.5,54">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\ChannelsDim\YoutubeODSSource">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\ChannelsDim\YoutubeSTGChannels">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dimensions\CountryDim">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Dimensions\CountryDim\YoutubeSTGCountry"
+          TopLeft="235,135" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Dimensions\CountryDim\YoutubeODSSource"
+          TopLeft="231,25" />
+        <EdgeLayout
+          Id="Package\Dimensions\CountryDim.Paths[OLE DB Source Output]"
+          TopLeft="323,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68"
+              Start="0,0"
+              End="0,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\CountryDim\YoutubeODSSource">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\CountryDim\YoutubeSTGCountry">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Fact\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fact\Data Flow Task\CategoryMatchLookup"
+          TopLeft="182.5,230" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Fact\Data Flow Task\VideoFactSTG"
+          TopLeft="200.909090909091,323.939393939394" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Fact\Data Flow Task\YoutubeODSSource"
+          TopLeft="180.769230769231,16.9230769230769" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Fact\Data Flow Task\BooleanColsConversion"
+          TopLeft="175.833333333333,164.166666666667" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Fact\Data Flow Task\FixDateColumns"
+          TopLeft="189.769230769231,87.9230769230769" />
+        <EdgeLayout
+          Id="Package\Fact\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="270.019230769231,58.9230769230769">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="275.916666666667,206.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.8333333333334"
+              Start="0,0"
+              End="0,16.3333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.3333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="272.051282051282,129.923076923077">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.2435897435898"
+              Start="0,0"
+              End="0,26.7435897435898">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.7435897435898" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="276.954545454545,272">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.9393939393943"
+              Start="0,0"
+              End="0,44.4393939393943">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.4393939393943" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,16.4150094696971,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact\Data Flow Task\VideoFactSTG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact\Data Flow Task\YoutubeODSSource">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact\Data Flow Task\CategoryMatchLookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[CategoryMap]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
