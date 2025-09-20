@@ -47,7 +47,7 @@ After loading the data into the **`YoutubeODS.Videos`** table, the next step was
 We started by creating both a **Logical Model** and a **Conceptual Model** to define the dimensions and fact table.  
 
 <p align="center">  
-  <img src="Data Models/Logical Model.png" alt="Logical Model" width="400"/>  
+  <img src="Data Models/Logical Model.png" alt="Logical Model" width="400" height="400"/>  
   <img src="Data Models/Conceptual model.png" alt="Conceptual Model" width="400"/>  
 </p>  
 
