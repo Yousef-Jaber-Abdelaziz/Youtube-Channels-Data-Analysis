@@ -40,3 +40,25 @@ After preparing the dataset, the CSV files for **Canada, US, and Brazil** were a
   <img src="Full Flow ScreenShots/1) ETL Pipeline/ODS.png" alt="ODS Data Flow" width="500"/>  
 </p>  
 
+## 🔹 Step 2: Creating the STG Layer  
+
+After loading the data into the **`YoutubeODS.Videos`** table, the next step was to design the **STG database structure** to prepare the data for the Data Warehouse.  
+
+We started by creating both a **Logical Model** and a **Conceptual Model** to define the dimensions and fact table.  
+
+<p align="center">  
+  <img src="Data Models/Logical Model.png" alt="Logical Model" width="400"/>  
+  <img src="Data Models/Conceptual model.png" alt="Conceptual Model" width="400"/>  
+</p>  
+
+Based on these models, we created a new database called **`YoutubeSTG`**. This database contains the **Dimension** and **Fact** tables as defined by the modeling step.  
+
+👉 Check the SQL script here: [![Open Script](https://img.shields.io/badge/SQL-Script-blue?logo=databricks)](SQL%20Queries/DimsFactCreation.sql)  
+
+After creating the structure, we filled the **Dimensions** and **Fact** tables in the STG database using SSIS, as shown below:  
+
+<p align="center">  
+  <img src="Full Flow ScreenShots/1) ETL Pipeline/STG Full View.png" alt="STG Data Flow" width="700"/>  
+</p>  
+
+
