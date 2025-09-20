@@ -104,8 +104,8 @@ The dashboard was designed with **two pages**, providing insights into:
 - Trending patterns and engagement rates.  
 
 <p align="center">  
-  <img src="Full Flow ScreenShots/3) Dashboard Screenshots/Data Overview.png" alt="Power BI Dashboard - Page 1" width="500"/>  
-  <img src="Full Flow ScreenShots/3) Dashboard Screenshots/Channels Analysis.png" alt="Power BI Dashboard - Page 2" width="500"/>  
+  <img src="Full Flow ScreenShots/3) Dashboard Screenshots/Data Overview.png" alt="Power BI Dashboard - Page 1" width="400"/>  
+  <img src="Full Flow ScreenShots/3) Dashboard Screenshots/Channels Analysis.png" alt="Power BI Dashboard - Page 2" width="400"/>  
 </p>  
 
 
