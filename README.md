@@ -61,4 +61,20 @@ After creating the structure, we filled the **Dimensions** and **Fact** tables i
   <img src="Full Flow ScreenShots/1) ETL Pipeline/STG Full View.png" alt="STG Data Flow" width="500"/>  
 </p>  
 
+## 🔹 Step 3: Creating the DWH Layer  
+
+After finalizing the **Dimensions** and **Fact** structure in the STG layer, the next step was to build the **Data Warehouse (DWH)**.  
+
+We created a new database called **`YoutubeDWH`** containing all the **Dimension** and **Fact** tables, ready to host the data.  
+
+👉 Check the SQL script here: [![Open Script](https://img.shields.io/badge/SQL-Script-blue?logo=databricks)](SQL%20Queries/DWH%20Creation.sql)  
+
+Once the schema was in place, we transferred the data from the **STG dimensions** into the **DWH dimensions**.  
+Using SSIS, we performed **lookups** between the Fact and Dimensions so the Fact table could reference the correct **surrogate keys** (IDs).  
+
+<p align="center">  
+  <img src="Full Flow ScreenShots/1) ETL Pipeline/STG Full View.png" alt="Full DWH View" width="400"/>  
+  <img src="Full Flow ScreenShots/1) ETL Pipeline/DWH Fact Lookup.png" alt="DWH Lookup" width="400"/>  
+</p>  
+
 
