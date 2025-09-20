@@ -77,4 +77,21 @@ Using SSIS, we performed **lookups** between the Fact and Dimensions so the Fact
   <img src="Full Flow ScreenShots/1) ETL Pipeline/DWH Fact Lookup.png" alt="DWH Lookup" width="400"/>  
 </p>  
 
+## 🔹 Step 4: Building the Semantic Model (SSAS)  
+
+After creating the **DWH**, we loaded the **Fact** and **Dimension** tables into an **SSAS Tabular Project** to build the **Semantic Model**.  
+This step involved:  
+- Creating **DAX measures** (e.g., total views, likes, dislikes, engagement).  
+- Defining **relationships** between Fact and Dimensions.  
+
+<p align="center">  
+  <img src="Full Flow ScreenShots/2) Semantic Model (SSAS)/Semantic Layer Model View.png" alt="SSAS Semantic Model View" width="500"/>  
+</p>  
+
+Once the measures and relationships were defined, the final **Semantic Model** was deployed to SSAS.  
+This allowed the model to be cached and updated for efficient querying and analysis.  
+
+<p align="center">  
+  <img src="Full Flow ScreenShots/2) Semantic Model (SSAS)/Deployment Operation.png" alt="SSAS Deployment Operation" width="700"/>  
+</p>  
 
