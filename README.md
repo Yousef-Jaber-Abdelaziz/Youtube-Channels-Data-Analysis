@@ -58,7 +58,7 @@ Based on these models, we created a new database called **`YoutubeSTG`**. This d
 After creating the structure, we filled the **Dimensions** and **Fact** tables in the STG database using SSIS, as shown below:  
 
 <p align="center">  
-  <img src="Full Flow ScreenShots/1) ETL Pipeline/STG Full View.png" alt="STG Data Flow" width="700"/>  
+  <img src="Full Flow ScreenShots/1) ETL Pipeline/STG Full View.png" alt="STG Data Flow" width="500"/>  
 </p>  
 
 
