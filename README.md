@@ -25,3 +25,18 @@ While extracting the dataset into **SSIS**, we faced an issue with the **Connect
 We used **Python preprocessing** to fix the issue before loading into SSIS. Specifically, we added quotes (`""`) around any text field containing at least one comma. This ensured that SSIS correctly treated the values as a single column.  
 
 👉 Check the detailed implementation here: [![Open Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)](fixing-the-youtube-title-feature.ipynb)  
+
+## 🔹 Step 1: Getting the Data & Creating the ODS Layer  
+
+After fixing the **title column issue**, we successfully created the **Connection Manager** for the CSV files. Using the advanced options in the CSV connection manager, we defined the most suitable data types for each column based on the dataset description.  
+
+Next, we created a new database called **`YoutubeODS`** with a table named **`Videos`** using a SQL script.  
+
+👉 Check the script here: [![Open Script](https://img.shields.io/badge/SQL-Script-blue?logo=databricks)]("SQL Queries/ODS_Creation.sql")  
+
+After preparing the dataset, the CSV files for **Canada, US, and Brazil** were added into the **Data Flow** in the package called **ODS**. The files were then **unioned** and loaded into the **`YoutubeODS.Videos`** table as the destination.  
+
+<p align="center">  
+  <img src="images/ods_dataflow.png" alt="ODS Data Flow" width="700"/>  
+</p>  
+
