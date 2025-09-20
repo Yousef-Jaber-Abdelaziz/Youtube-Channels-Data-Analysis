@@ -37,6 +37,6 @@ Next, we created a new database called **`YoutubeODS`** with a table named **`Vi
 After preparing the dataset, the CSV files for **Canada, US, and Brazil** were added into the **Data Flow** in the package called **ODS**. The files were then **unioned** and loaded into the **`YoutubeODS.Videos`** table as the destination.  
 
 <p align="center">  
-  <img src="images/ods_dataflow.png" alt="ODS Data Flow" width="700"/>  
+  <img src="Full Flow ScreenShots/1) ETL Pipeline/ODS.png" alt="ODS Data Flow" width="700"/>  
 </p>  
 
