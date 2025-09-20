@@ -67,7 +67,7 @@ After finalizing the **Dimensions** and **Fact** structure in the STG layer, the
 
 We created a new database called **`YoutubeDWH`** containing all the **Dimension** and **Fact** tables, ready to host the data.  
 
-👉 Check the SQL script here: [![Open Script](https://img.shields.io/badge/SQL-Script-blue?logo=databricks)](SQL%20Queries/DWH%20Creation.sql)  
+👉 Check the SQL script here: [![Open Script](https://img.shields.io/badge/SQL-Script-blue?logo=databricks)](SQL%20Queries/DWH_Creation.sql)  
 
 Once the schema was in place, we transferred the data from the **STG dimensions** into the **DWH dimensions**.  
 Using SSIS, we performed **lookups** between the Fact and Dimensions so the Fact table could reference the correct **surrogate keys** (IDs).  
