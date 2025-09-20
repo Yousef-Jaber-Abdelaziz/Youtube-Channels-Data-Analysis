@@ -92,6 +92,20 @@ Once the measures and relationships were defined, the final **Semantic Model** w
 This allowed the model to be cached and updated for efficient querying and analysis.  
 
 <p align="center">  
-  <img src="Full Flow ScreenShots/2) Semantic Model (SSAS)/Deployment Operation.png" alt="SSAS Deployment Operation" width="700"/>  
+  <img src="Full Flow ScreenShots/2) Semantic Model (SSAS)/Deployment Operation.png" alt="SSAS Deployment Operation" width="500"/>  
 </p>  
+
+## 🔹 Step 5: Power BI Interactive Dashboard  
+
+Finally, we connected **Power BI** to the deployed **SSAS Semantic Model** to build an interactive dashboard.  
+The dashboard was designed with **two pages**, providing insights into:  
+- Video performance metrics (views, likes, dislikes, comments).  
+- Regional comparisons between **Canada, US, and Brazil**.  
+- Trending patterns and engagement rates.  
+
+<p align="center">  
+  <img src="Full Flow ScreenShots/3) Dashboard Screenshots/Data Overview.png" alt="Power BI Dashboard - Page 1" width="500"/>  
+  <img src="Full Flow ScreenShots/3) Dashboard Screenshots/Channels Analysis.png" alt="Power BI Dashboard - Page 2" width="500"/>  
+</p>  
+
 
